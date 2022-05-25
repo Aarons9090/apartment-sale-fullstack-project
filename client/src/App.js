@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import apartmentsService from "./services/apartments"
 import ApartmentForm from "./components/ApartmentForm"
+import NavigationBar from "./components/NavigationBar"
 import ApartmentGrid from "./components/ApartmentGrid"
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
 
   return (
     <div>
-      <ApartmentForm addApartment={addApartment}/>
+      {/* <ApartmentForm addApartment={addApartment}/> */}
+      <NavigationBar />
       <div className="grid-view">
       <ApartmentGrid apartments={apartments} />
       </div>

@@ -1,5 +1,5 @@
 import ApartmentCard from "./ApartmentCard"
-import "../ApartmentCard.css"
+import "../styles/ApartmentCard.css"
 
 const ApartmentGrid = ({apartments}) => {
     return(

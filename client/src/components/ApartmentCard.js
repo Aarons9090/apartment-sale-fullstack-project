@@ -1,4 +1,4 @@
-import "../ApartmentCard.css"
+import "../styles/ApartmentCard.css"
 const ApartmentCard = ({ apartment }) => {
 
     return (
