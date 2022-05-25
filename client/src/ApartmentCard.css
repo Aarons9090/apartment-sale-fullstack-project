@@ -1,19 +1,30 @@
 
 .grid {
+    max-width: 1500px;
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
-    flex-grow: 2;
+    
 }
+
 .card {
+    min-width: 180px;
+    width: 200px;
+    max-width: 400px;
+    flex: 1 0 30%;
     margin: 10px;
     border-width: 2px;
     border-style: solid;
 }
 
 img {
-    max-width: 200px;
+    max-width: 100%;
 }
 
 .address {
     color: red;
+}
+
+.info-box {
+    height: 70px;
 }

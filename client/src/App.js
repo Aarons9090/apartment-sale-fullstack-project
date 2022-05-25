@@ -27,7 +27,9 @@ function App() {
   return (
     <div>
       <ApartmentForm addApartment={addApartment}/>
+      <div className="grid-view">
       <ApartmentGrid apartments={apartments} />
+      </div>
     </div>
   )
 }
