@@ -1,0 +1,10 @@
+
+const ApartmentCard = apartment => {
+    return (
+        <div>
+            {apartment.values}
+        </div>
+    )
+}
+
+export default ApartmentCard
