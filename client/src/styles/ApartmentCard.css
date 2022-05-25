@@ -8,24 +8,47 @@
 
 }
 
+.card-area {
+    min-width: 250px;
+    max-width: 400px;
+    padding: 0 50px 70px 50px;
+    flex: 1 0 34%;
+}
+
 .card {
     background-color: white;
-    min-width: 250px;
-    width: 200px;
-    max-width: 400px;
-    flex: 1 0 34%;
-    margin: 0 50px 40px 50px;
-    filter: drop-shadow(3px 3px 18px rgba(0,0,0,0.17));
+    margin: auto;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 img {
     max-width: 100%;
 }
 
-.address {
-    color: red;
+.info-box {
+    margin: 5px;
+    height: 70px;
+    position: relative;
 }
 
-.info-box {
-    height: 70px;
+.address {
+    position: absolute;
+    top: 0px;
+    font-size: 1rem;
 }
+
+.price {
+    font-family: 'Times New Roman', serif; 
+    font-size: 26px;
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
+}
+
+.area {
+    top: 0px;
+    position: absolute;
+    right: 5px;
+    
+}
+
