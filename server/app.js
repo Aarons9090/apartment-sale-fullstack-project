@@ -4,6 +4,8 @@ const cors = require("cors")
 const mongoose = require("mongoose")
 const config = require("./utils/config")
 const middleware = require("./utils/middleware")
+const apartmentsRouter = require("./controllers/apartments")
+
 require("express-async-errors")
 
 mongoose.connect(config.MONGOURL)
@@ -18,6 +20,8 @@ mongoose.connect(config.MONGOURL)
 app.use(cors())
 app.use(express.static("build"))
 app.use(express.json())
+
+app.use("/api/apartments", apartmentsRouter)
 
 app.use(middleware.unknownRequest)
 app.use(middleware.errorHandler)

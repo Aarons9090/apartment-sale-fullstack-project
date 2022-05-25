@@ -24,9 +24,9 @@ apartmentsRouter.post("/", async (request, response) => {
     response.status(201).json(savedApartment)
 })
 
-blogsRouter.delete("/:id", async (request, response) => {
+apartmentsRouter.delete("/:id", async (request, response) => {
     const apartment = await Apartment.findById(request.params.id)
-    
+
     if(!apartment){
         return response.status(204).end()
     }
@@ -34,3 +34,5 @@ blogsRouter.delete("/:id", async (request, response) => {
     await Apartment.findByIdAndRemove(request.params.id)
     response.status(204).end()
 })
+
+module.exports = apartmentsRouter
