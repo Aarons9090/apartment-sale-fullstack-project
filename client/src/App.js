@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import apartmentsService from "./services/apartments"
 import ApartmentForm from "./components/ApartmentForm"
-import ApartmentCard from "./components/ApartmentCard"
+import ApartmentGrid from "./components/ApartmentGrid"
 
 function App() {
   const [apartments, setApartments] = useState([])
@@ -27,9 +27,8 @@ function App() {
   return (
     <div>
       <ApartmentForm addApartment={addApartment}/>
-      {apartments.map(apartment => <ApartmentCard apartment={apartment} />)}
+      <ApartmentGrid apartments={apartments} />
     </div>
-
   )
 }
 

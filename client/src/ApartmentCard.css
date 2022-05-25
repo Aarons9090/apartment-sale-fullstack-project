@@ -1,0 +1,19 @@
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 2;
+}
+.card {
+    margin: 10px;
+    border-width: 2px;
+    border-style: solid;
+}
+
+img {
+    max-width: 200px;
+}
+
+.address {
+    color: red;
+}
