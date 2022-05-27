@@ -9,12 +9,11 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --wp--preset--shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --wp-preset--color--secondary-gray: rgba(112, 112, 112, 1);
 }
 
 .grid-view {

@@ -27,7 +27,7 @@ img {
     margin: 20px;
     height: 100px;
     position: relative;
-    color: rgba(112, 112, 112, 1);
+    color: var(--wp-preset--color--secondary-gray);
     font-family: 'Roboto';
     font-size: 20px;
 }
