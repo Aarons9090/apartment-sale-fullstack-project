@@ -11,7 +11,7 @@
 .card-area {
     min-width: 250px;
     max-width: 400px;
-    padding: 0 50px 70px 50px;
+    padding: 0 50px 50px 50px;
     flex: 1 0 34%;
 }
 
@@ -32,6 +32,9 @@ img {
 }
 
 .address {
+    max-width: 80%;
+    line-height: 90%;
+    word-wrap: break-word;
     position: absolute;
     top: 0px;
     font-size: 1rem;
