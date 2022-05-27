@@ -19,6 +19,7 @@ const ApartmentCard = ({ apartment }) => {
                     <span className="price">{price}</span>
                     <span className="area">{apartment.area} m{<sup>2</sup>}</span>
                     <span className="type">{apartment.apartmentType}</span>
+                    <span className="one-liner">{apartment.oneLiner}</span>
                 </div>
             </div>
         </div>
