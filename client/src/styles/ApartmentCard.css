@@ -10,7 +10,7 @@
 
 .card-area {
     min-width: 400px;
-    max-width: 510px;
+    max-width: 530px;
     padding: 0 50px 50px 50px;
     flex: 1 0 34%;
 }
@@ -21,50 +21,50 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.image-container {
+    height: 275px;
+    width: 100%;
+}
 img {
-    max-width: 100%;
+    object-fit: cover;
+    width: inherit;
+    height: inherit;
+}
+.info-box {
+    text-transform: capitalize;
+    margin: 20px;
+    height: 100px;
+    position: relative;
+    color: rgba(112, 112, 112, 1);
+    font-family: 'Roboto';
+    font-size: 20px;
+}
+.right-info-group {
+    
+    height: 78px;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    justify-content: space-between;
 }
 
-.info-box {
-    margin: 5px;
-    height: 70px;
-    position: relative;
+.right-info-group p {
+    margin: 0px;
 }
 
 .address {
     max-width: 80%;
-    line-height: 90%;
     word-wrap: break-word;
     position: absolute;
-    top: 0px;
-    font-size: 1rem;
-}
-
-.price {
-    font-family: 'Times New Roman', serif; 
-    font-size: 26px;
-    position: absolute;
-    bottom: 10px;
-    left: 0px;
-}
-
-.area {
-    top: 0px;
-    position: absolute;
-    right: 5px;
     
 }
 
-.type {
-    text-transform: capitalize;
+.price {
+    color: rgb(65, 86, 171);
+    font-family: serif;
+    font-size: 40px;
     position: absolute;
-    top: 20px;
-    right: 5px;
+    bottom: 10px;
 }
 
-.one-liner {
-    position: absolute;
-    bottom: 7px;
-    right: 5px;
-}
 

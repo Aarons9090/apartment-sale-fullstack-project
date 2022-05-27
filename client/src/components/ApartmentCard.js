@@ -17,9 +17,11 @@ const ApartmentCard = ({ apartment }) => {
                 <div className="info-box">
                     <span className="address">{apartment.address} {apartment.city}</span>
                     <span className="price">{price}</span>
-                    <span className="area">{apartment.area} m{<sup>2</sup>}</span>
-                    <span className="type">{apartment.apartmentType}</span>
-                    <span className="one-liner">{apartment.oneLiner}</span>
+                    <div className="right-info-group">
+                        <p>{apartment.area} m{<sup>2</sup>}</p>
+                        <p>{apartment.apartmentType}</p>
+                        <p>{apartment.oneLiner}</p>
+                    </div>
                 </div>
             </div>
         </div>
