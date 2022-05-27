@@ -17,7 +17,8 @@ apartmentsRouter.post("/", async (request, response) => {
         area: body.area,
         description: body.description,
         seller: body.seller,
-        apartmentType: body.apartmentType
+        apartmentType: body.apartmentType,
+        image: body.image
     })
 
     const savedApartment = await apartment.save()

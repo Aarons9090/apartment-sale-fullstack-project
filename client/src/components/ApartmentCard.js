@@ -12,7 +12,7 @@ const ApartmentCard = ({ apartment }) => {
         <div className="card-area">
             <div className="card">
                 <div className="image-container">
-                    <img src="https://cdn.pixabay.com/photo/2016/01/15/19/55/house-1142297_960_720.jpg" alt="house" />
+                    <img src={apartment.image} alt="house" />
                 </div>
                 <div className="info-box">
                     <span className="address">{apartment.address} {apartment.city}</span>

@@ -7,7 +7,8 @@ const apartmentSchema = mongoose.Schema({
     area: String,
     description: String,
     seller: String,
-    apartmentType: String
+    apartmentType: String,
+    image: String
 })
 
 apartmentSchema.set("toJSON", {
