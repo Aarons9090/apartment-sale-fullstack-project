@@ -27,8 +27,7 @@ function App() {
 
   return (
     <div>
-      {/* <ApartmentForm addApartment={addApartment}/> */}
-      <NavigationBar />
+      <NavigationBar apartments={apartments}/>
       <div className="grid-view">
       <ApartmentGrid apartments={apartments} />
       </div>

@@ -12,14 +12,36 @@
     position: relative;
 }
 
-.search-bar {
-    margin: 0 auto;
-    height: 100px;
-    width: 70%;
+.filter-group {
     min-width: 400px;
+    max-width: 1000px;
+    width: 70%;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+}
+
+.search-bar {
+    height: 100px;
+    width: 100%;
     background-color: white;
     z-index: 1;
     top: 50px;
     position: absolute;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: var(--wp--preset--shadow)
+}
+
+.filter-bar {
+    top:200px;
+    width: 100%;
+    position: relative;
+    margin: auto;
+    border: 1px solid;
+}
+
+.found {
+    display: inline-block;
+    position: relative;
+    font-family: "Roboto";
+    font-size: x-large;
 }

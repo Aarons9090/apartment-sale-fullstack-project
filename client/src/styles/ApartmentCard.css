@@ -1,12 +1,4 @@
 
-.grid {
-    margin: 70px 50px 0px 50px;
-    max-width: 1900px;
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
-
-}
 
 .card-area {
     min-width: 400px;
@@ -18,7 +10,7 @@
 .card {
     background-color: white;
     margin: auto;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: var(--wp--preset--shadow)
 }
 
 .image-container {
@@ -40,8 +32,9 @@ img {
     font-size: 20px;
 }
 .right-info-group {
-    
+    overflow: hidden;
     height: 78px;
+    padding-left: 40%;
     display: flex;
     flex-direction: column;
     text-align: right;

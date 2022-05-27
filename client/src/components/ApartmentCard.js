@@ -15,7 +15,7 @@ const ApartmentCard = ({ apartment }) => {
                     <img src={apartment.image} alt="house" />
                 </div>
                 <div className="info-box">
-                    <span className="address">{apartment.address} {apartment.city}</span>
+                    <span className="address">{apartment.address}, {apartment.city}</span>
                     <span className="price">{price}</span>
                     <div className="right-info-group">
                         <p>{apartment.area} m{<sup>2</sup>}</p>

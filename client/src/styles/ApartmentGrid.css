@@ -1,0 +1,15 @@
+
+.search-results {
+    margin: 100px 100px 50px 100px;
+}
+
+
+
+.grid {
+    margin: 70px 50px 0px 50px;
+    max-width: 1900px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
