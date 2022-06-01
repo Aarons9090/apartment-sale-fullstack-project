@@ -1,25 +1,43 @@
 .dropdown {
+  cursor: pointer;
   position: relative;
-  justify-content: right;
-  display: flex;
+  border: none;
+  width: 130px;
+  font-family: inherit;
 }
 
 .dropdown-button {
-  background-color: inherit;
-  border: none;
-  border-bottom: 1px solid;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  height: 20px;
+}
+
+.dropdown-element {
+  background-color: white;
+  padding: 3px;
+  margin-top: -1px;
 }
 
 .dropdown-content {
-  cursor: pointer;
-  top: 20px;
+  width: inherit;
+  font-size: 14px;
+  top: 30px;
   position: absolute;
-  background-color: darkolivegreen;
-  width: auto;
-  height: auto;
 }
 
 .dropdown-content div {
   padding: 5px;
   border: 1px solid;
+}
+
+.arrow {
+  margin: 3px 5px;
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+  
 }

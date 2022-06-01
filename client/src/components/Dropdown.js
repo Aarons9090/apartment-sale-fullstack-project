@@ -9,6 +9,8 @@ const Dropdown = ({ content }) => {
     const close = () => setExpanded(false)
 
     const contentStyle = { display: expanded ? "block" : "none" }
+    const arrowNotSelected = { transform: "rotate(135deg)"}
+    const arrowSelected = { transform: "rotate(-45deg)", margin: "5px 5px"}
 
     const select = (event) => {
         const value = event.target.textContent
@@ -22,20 +24,22 @@ const Dropdown = ({ content }) => {
             close()
         }
     }
-    
+
 
     return (
         <div className="dropdown" tabIndex={0} onBlur={onBlur}>
-            <button className="dropdown-button" onClick={expand}>{selected ? selected : "Sort"}</button>
-            
-                <div style={contentStyle} className="dropdown-content">
-                    {content.map(obj => (
-                        <div key={obj} className="dropdown-element" onClick={select}>{obj}</div>
-                        ))
-                    }
-                </div>
-            
-            
+            <div className="dropdown-button" onClick={() => { setExpanded(!expanded) }}>{selected ? selected : "Sort"}
+                <div style={expanded ? arrowSelected : arrowNotSelected} className="arrow"></div>
+            </div>
+
+            <div style={contentStyle} className="dropdown-content">
+                {content.map(obj => (
+                    <div key={obj} className="dropdown-element" onClick={select}>{obj}</div>
+                ))
+                }
+            </div>
+
+
 
 
         </div >
