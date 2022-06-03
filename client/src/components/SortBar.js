@@ -5,12 +5,12 @@ const SortBar = ({ apartments }) => {
         <div className="sort-bar">
             <span className="found">{`Found ${apartments.length} properties`}</span>
             <SortDropdown content={
-               [ "Price increasing",
-                "Price decreasing",
-                "Newest",
-                "Oldest"]
+                ["Price increasing",
+                    "Price decreasing",
+                    "Newest",
+                    "Oldest"]
 
-}/>
+            } />
         </div>
     )
 }
