@@ -2,10 +2,11 @@ import "../styles/NavigationBar.css"
 import SortBar from "./SortBar"
 import RangeSlider from "./RangeSlider"
 import { Stack } from "@mui/material"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { useEffect, useState } from "react"
 import apartmentService from "../services/apartments"
 import Dropdown from "./Dropdown"
+import { setFilter, setPriceFilter } from "../reducers/searchFilterReducer"
 
 const NavigationBar = () => {
     const [cities, setCities] = useState([])
@@ -16,6 +17,8 @@ const NavigationBar = () => {
     const [minPrice, setMinPrice] = useState("")
     const [rooms, setRooms] = useState([])
     const [types, setTypes] = useState([])
+
+    const dispatch = useDispatch()
 
     useEffect(() => {
         const fetchData = async () => {
@@ -39,8 +42,15 @@ const NavigationBar = () => {
         fetchData()
     }, [])
 
+    const searchFilter = useSelector(state => state.searchFilter)
+
     const handleSearch = (event) => {
         event.preventDefault()
+        console.log(searchFilter)
+    }
+
+    const changePriceFilter = (value) =>{
+        dispatch(setPriceFilter(value))
     }
 
     return (
@@ -62,12 +72,14 @@ const NavigationBar = () => {
                             min={minPrice}
                             max={maxPrice}
                             roundBy={1000}
+                            setFilter={changePriceFilter}
                         />
                         <RangeSlider
                             title={"size"}
                             min={minSize}
                             max={maxSize}
                             roundBy={1}
+                            setFilter={() => {}}
                         />
                         <button onClick={handleSearch} >
                             Seach

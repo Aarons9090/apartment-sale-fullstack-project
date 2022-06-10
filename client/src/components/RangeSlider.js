@@ -5,7 +5,7 @@ const valuetext = value => {
     return `${value}°C`
 }
 
-const RangeSlider = ({ title, max, min, roundBy }) => {
+const RangeSlider = ({ title, max, min, roundBy, setFilter }) => {
     const roundedMin = Math.round(min / roundBy) * roundBy
 
     const roundedMax = Math.round(max / roundBy) * roundBy
@@ -14,6 +14,7 @@ const RangeSlider = ({ title, max, min, roundBy }) => {
 
     const handleChange = (event, newValue) => {
         setValue(newValue)
+        setFilter(newValue)
     }
 
     return (
