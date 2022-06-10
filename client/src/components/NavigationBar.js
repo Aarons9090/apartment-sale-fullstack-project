@@ -12,6 +12,8 @@ const NavigationBar = () => {
     const apartments = useSelector(state => state.apartments)
     const [maxSize, setMaxSize] = useState("")
     const [minSize, setMinSize] = useState("")
+    const [maxPrice, setMaxPrice] = useState("")
+    const [minPrice, setMinPrice] = useState("")
 
     useEffect(() => {
         const fetchData = async () => {
@@ -21,12 +23,16 @@ const NavigationBar = () => {
             const sizes = await apartmentService.getMinMaxSize()
             setMaxSize(sizes.maxSize)
             setMinSize(sizes.minSize)
+
+            const prices = await apartmentService.getMinMaxPrice()
+            setMaxPrice(prices.maxPrice)
+            setMinPrice(prices.minPrice)
         }
         fetchData()
     }, [])
 
     return (
-        minSize ? 
+        minPrice ? 
         <div className="top">
             <div className="top-bar"></div>
             <div className="filler-bar"></div>
@@ -35,8 +41,8 @@ const NavigationBar = () => {
                     <Stack direction="row" spacing={2}>
                         <RangeSlider
                             title={"price"}
-                            min={40200}
-                            max={520000}
+                            min={minPrice}
+                            max={maxPrice}
                             roundBy={1000}
                         />
                         <RangeSlider
