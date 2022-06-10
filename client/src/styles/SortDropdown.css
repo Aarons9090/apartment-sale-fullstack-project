@@ -21,6 +21,7 @@
 }
 
 .dropdown-content {
+  z-index: 1;
   width: inherit;
   font-size: 14px;
   top: 30px;

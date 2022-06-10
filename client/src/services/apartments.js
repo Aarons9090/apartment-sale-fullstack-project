@@ -11,6 +11,11 @@ const getAll = async () => {
     return res.data
 }
 
+const getAllCities = async () => {
+    const res = await axios.get(`${URL}/cities`)
+    return res.data
+}
+
 const remove = async id => {
     const res = await axios.delete(`${URL}/${id}`)
     return res.data
@@ -19,5 +24,6 @@ const remove = async id => {
 export default {
     create,
     getAll,
-    remove
+    remove,
+    getAllCities
 }

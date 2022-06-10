@@ -9,8 +9,9 @@ const SortBar = ({ apartments }) => {
                     "Price decreasing",
                     "Newest",
                     "Oldest"]
+                
 
-            } />
+            } title="Sort" />
         </div>
     )
 }

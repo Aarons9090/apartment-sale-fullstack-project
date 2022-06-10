@@ -3,10 +3,22 @@ import SortBar from "./SortBar"
 import RangeSlider from "./RangeSlider"
 import { Stack } from "@mui/material"
 import { useSelector } from "react-redux"
+import { useEffect, useState } from "react"
+import apartmentService from "../services/apartments"
+import Dropdown from "./Dropdown"
 
 const NavigationBar = () => {
+    const [cities, setCities] = useState([])
     const apartments = useSelector(state => state.apartments)
-    
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const cities = await apartmentService.getAllCities()
+            setCities(cities)
+        }
+        fetchData()
+    }, [])
+
     return (
         <div className="top">
             <div className="top-bar"></div>
@@ -26,6 +38,9 @@ const NavigationBar = () => {
                             max={230}
                             roundBy={1}
                         />
+                    </Stack>
+                    <Stack direction="row" spacing={2}>
+                    <Dropdown content={cities} title="City" />
                     </Stack>
                 </div>
                 <SortBar apartments={apartments} />
