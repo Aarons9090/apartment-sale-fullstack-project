@@ -11,7 +11,7 @@ apartmentsRouter.get("/cities", async (request, response)=> {
     const apartments = await Apartment.find({})
     const cities = apartments.map(apartment => apartment.city)
     const uniqueCities = [...new Set(cities)]
-    return uniqueCities.json()
+    return response.json(uniqueCities)
 })
 
 apartmentsRouter.post("/", async (request, response) => {
