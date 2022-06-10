@@ -10,16 +10,23 @@ import Dropdown from "./Dropdown"
 const NavigationBar = () => {
     const [cities, setCities] = useState([])
     const apartments = useSelector(state => state.apartments)
+    const [maxSize, setMaxSize] = useState("")
+    const [minSize, setMinSize] = useState("")
 
     useEffect(() => {
         const fetchData = async () => {
             const cities = await apartmentService.getAllCities()
             setCities(cities)
+
+            const sizes = await apartmentService.getMinMaxSize()
+            setMaxSize(sizes.maxSize)
+            setMinSize(sizes.minSize)
         }
         fetchData()
     }, [])
 
     return (
+        minSize ? 
         <div className="top">
             <div className="top-bar"></div>
             <div className="filler-bar"></div>
@@ -34,8 +41,8 @@ const NavigationBar = () => {
                         />
                         <RangeSlider
                             title={"size"}
-                            min={20}
-                            max={230}
+                            min={minSize}
+                            max={maxSize}
                             roundBy={1}
                         />
                     </Stack>
@@ -46,6 +53,7 @@ const NavigationBar = () => {
                 <SortBar apartments={apartments} />
             </div>
         </div>
+        : null
     )
 }
 

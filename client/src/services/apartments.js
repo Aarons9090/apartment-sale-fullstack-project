@@ -11,6 +11,16 @@ const getAll = async () => {
     return res.data
 }
 
+const getMinMaxSize = async () => {
+    const res = await axios.get(URL)
+    const apartments = res.data
+    const sizes = apartments.map(apartment => apartment.area)
+    const maxSize = Math.max(...sizes)
+    const minSize = Math.min(...sizes)
+
+    return {minSize, maxSize}
+}
+
 const getAllCities = async () => {
     const res = await axios.get(`${URL}/cities`)
     return res.data
@@ -25,5 +35,6 @@ export default {
     create,
     getAll,
     remove,
-    getAllCities
+    getAllCities,
+    getMinMaxSize
 }
