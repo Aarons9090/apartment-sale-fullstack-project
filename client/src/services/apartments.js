@@ -23,11 +23,17 @@ const getMinMaxPrice = async () => {
 
 const getRooms = async () => {
     const res = await axios.get(URL)
-    console.log(res.data)
     const rooms = res.data.map(apartment => apartment.rooms)
     const uniqueRooms = [...new Set(rooms)]
     const sortedRooms = uniqueRooms.sort((a, b) => b - a)
     return sortedRooms
+}
+
+const getTypes = async () => {
+    const res = await axios.get(URL)
+    const types = res.data.map(apartment => apartment.apartmentType)
+    const uniqueTypes = [...new Set(types)]
+    return uniqueTypes
 }
 
 const getMinMaxSize = async () => {
@@ -57,5 +63,6 @@ export default {
     getAllCities,
     getMinMaxSize,
     getMinMaxPrice,
-    getRooms
+    getRooms,
+    getTypes
 }

@@ -15,6 +15,7 @@ const NavigationBar = () => {
     const [maxPrice, setMaxPrice] = useState("")
     const [minPrice, setMinPrice] = useState("")
     const [rooms, setRooms] = useState([])
+    const [types, setTypes] = useState([])
 
     useEffect(() => {
         const fetchData = async () => {
@@ -28,12 +29,19 @@ const NavigationBar = () => {
             const rooms = await apartmentService.getRooms()
             setRooms(rooms)
 
+            const types = await apartmentService.getTypes()
+            setTypes(types)
+
             const prices = await apartmentService.getMinMaxPrice()
             setMaxPrice(prices.maxPrice)
             setMinPrice(prices.minPrice)
         }
         fetchData()
     }, [])
+
+    const handleSearch = (event) => {
+        event.preventDefault()
+    }
 
     return (
         minPrice ? 
@@ -42,6 +50,12 @@ const NavigationBar = () => {
             <div className="filler-bar"></div>
             <div className="filter-group">
                 <div className="search-bar">
+                    
+                    <Stack direction="row" spacing={2}>
+                    <Dropdown content={cities} title="City" />
+                    <Dropdown content={types} title="Type" />
+                    <Dropdown content={rooms} title="Rooms" />
+                    </Stack>
                     <Stack direction="row" spacing={2}>
                         <RangeSlider
                             title={"price"}
@@ -55,10 +69,9 @@ const NavigationBar = () => {
                             max={maxSize}
                             roundBy={1}
                         />
-                    </Stack>
-                    <Stack direction="row" spacing={2}>
-                    <Dropdown content={cities} title="City" />
-                    <Dropdown content={rooms} title="Rooms" />
+                        <button onClick={handleSearch} >
+                            Seach
+                        </button>
                     </Stack>
                 </div>
                 <SortBar apartments={apartments} />
