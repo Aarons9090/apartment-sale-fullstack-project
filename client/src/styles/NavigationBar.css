@@ -48,3 +48,10 @@
     position: relative;
     font-size: x-large;
 }
+
+.rangeslide-container {
+    width: 315px;
+    height: 85px;
+    border: 1px solid;
+    line-height: 10%;
+}
