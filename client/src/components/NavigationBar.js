@@ -14,6 +14,7 @@ const NavigationBar = () => {
     const [minSize, setMinSize] = useState("")
     const [maxPrice, setMaxPrice] = useState("")
     const [minPrice, setMinPrice] = useState("")
+    const [rooms, setRooms] = useState([])
 
     useEffect(() => {
         const fetchData = async () => {
@@ -23,6 +24,9 @@ const NavigationBar = () => {
             const sizes = await apartmentService.getMinMaxSize()
             setMaxSize(sizes.maxSize)
             setMinSize(sizes.minSize)
+
+            const rooms = await apartmentService.getRooms()
+            setRooms(rooms)
 
             const prices = await apartmentService.getMinMaxPrice()
             setMaxPrice(prices.maxPrice)
@@ -54,6 +58,7 @@ const NavigationBar = () => {
                     </Stack>
                     <Stack direction="row" spacing={2}>
                     <Dropdown content={cities} title="City" />
+                    <Dropdown content={rooms} title="Rooms" />
                     </Stack>
                 </div>
                 <SortBar apartments={apartments} />
