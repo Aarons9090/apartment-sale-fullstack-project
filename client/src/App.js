@@ -9,6 +9,7 @@ function App() {
 
     useEffect(() => {
       dispatch(initializeApartments())
+      //dispatch(initializeFilter())
     }, [])
 
 

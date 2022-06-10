@@ -1,7 +1,7 @@
 import "../styles/SortDropdown.css"
 import { useState } from "react"
 
-const Dropdown = ({ content, title }) => {
+const Dropdown = ({ content, title, setFilter }) => {
     const [selected, setSelected] = useState("")
     const [expanded, setExpanded] = useState(false)
 
@@ -17,6 +17,10 @@ const Dropdown = ({ content, title }) => {
         console.log(value)
         close()
         setSelected(value)
+
+        if (setFilter) {
+            setFilter(value)
+        }
     }
 
     const onBlur = event => {
@@ -33,7 +37,7 @@ const Dropdown = ({ content, title }) => {
                     setExpanded(!expanded)
                 }}
             >
-                {selected ? selected :  title }
+                {selected ? selected : title}
                 <div
                     style={expanded ? arrowSelected : arrowNotSelected}
                     className="arrow"

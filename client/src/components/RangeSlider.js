@@ -7,14 +7,17 @@ const valuetext = value => {
 
 const RangeSlider = ({ title, max, min, roundBy, setFilter }) => {
     const roundedMin = Math.round(min / roundBy) * roundBy
-
     const roundedMax = Math.round(max / roundBy) * roundBy
+
+    const minimumGap = roundedMax * 0.1
 
     const [value, setValue] = useState([roundedMin, roundedMax])
 
     const handleChange = (event, newValue) => {
-        setValue(newValue)
-        setFilter(newValue)
+        if(newValue[1] - newValue[0] > minimumGap){
+            setValue(newValue)
+            setFilter(newValue)
+        } 
     }
 
     return (
@@ -26,6 +29,7 @@ const RangeSlider = ({ title, max, min, roundBy, setFilter }) => {
             <Slider
                 min={roundedMin}
                 max={roundedMax} // TODO: > 300 000e esim.
+                disableSwap
                 step={roundBy}
                 valueLabelDisplay="auto"
                 value={value}

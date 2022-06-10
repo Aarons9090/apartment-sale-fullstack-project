@@ -11,44 +11,37 @@ const getAll = async () => {
     return res.data
 }
 
-const getMinMaxPrice = async () => {
+const getSearchData = async () => {
     const res = await axios.get(URL)
     const apartments = res.data
+
     const prices = apartments.map(apartment => apartment.price)
+
     const maxPrice = Math.max(...prices)
     const minPrice = Math.min(...prices)
 
-    return {minPrice, maxPrice}
-}
+    const rooms = apartments.map(apartment => apartment.rooms)
 
-const getRooms = async () => {
-    const res = await axios.get(URL)
-    const rooms = res.data.map(apartment => apartment.rooms)
     const uniqueRooms = [...new Set(rooms)]
     const sortedRooms = uniqueRooms.sort((a, b) => b - a)
-    return sortedRooms
-}
 
-const getTypes = async () => {
-    const res = await axios.get(URL)
-    const types = res.data.map(apartment => apartment.apartmentType)
+    const types = apartments.map(apartment => apartment.apartmentType)
     const uniqueTypes = [...new Set(types)]
-    return uniqueTypes
-}
 
-const getMinMaxSize = async () => {
-    const res = await axios.get(URL)
-    const apartments = res.data
     const sizes = apartments.map(apartment => apartment.area)
     const maxSize = Math.max(...sizes)
     const minSize = Math.min(...sizes)
 
-    return {minSize, maxSize}
-}
+    const cities = apartments.map(apartment => apartment.city)
+    const uniqueCities = [...new Set(cities)]
 
-const getAllCities = async () => {
-    const res = await axios.get(`${URL}/cities`)
-    return res.data
+    return {
+        price: {min: minPrice, max: maxPrice},
+        rooms: sortedRooms,
+        types: uniqueTypes,
+        size: {min: minSize, max: maxSize},
+        cities: uniqueCities,
+    }
 }
 
 const remove = async id => {
@@ -61,9 +54,5 @@ export default {
     create,
     getAll,
     remove,
-    getAllCities,
-    getMinMaxSize,
-    getMinMaxPrice,
-    getRooms,
-    getTypes
+    getSearchData,
 }
