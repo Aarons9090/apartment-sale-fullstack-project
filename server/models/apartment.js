@@ -11,6 +11,7 @@ const apartmentSchema = mongoose.Schema({
     image: String,
     oneLiner: String,
     year: String,
+    rooms: String
 })
 
 apartmentSchema.set("toJSON", {
