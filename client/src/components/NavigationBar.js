@@ -2,8 +2,11 @@ import "../styles/NavigationBar.css"
 import SortBar from "./SortBar"
 import RangeSlider from "./RangeSlider"
 import { Stack } from "@mui/material"
+import { useSelector } from "react-redux"
 
-const NavigationBar = ({ apartments }) => {
+const NavigationBar = () => {
+    const apartments = useSelector(state => state.apartments)
+    
     return (
         <div className="top">
             <div className="top-bar"></div>

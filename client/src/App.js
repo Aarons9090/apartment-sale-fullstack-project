@@ -1,38 +1,25 @@
-import { useEffect, useState } from "react"
-import apartmentsService from "./services/apartments"
-import ApartmentForm from "./components/ApartmentForm"
+import { useEffect } from "react"
 import NavigationBar from "./components/NavigationBar"
 import ApartmentGrid from "./components/ApartmentGrid"
+import { useDispatch } from "react-redux"
+import { initializeApartments } from "./reducers/apartmentReducer"
 
 function App() {
-  const [apartments, setApartments] = useState([])
+    const dispatch = useDispatch()
 
-  useEffect(() => {
-    apartmentsService.getAll()
-      .then(data => {
-        setApartments(data)
-      })
-  }, [])
+    useEffect(() => {
+      dispatch(initializeApartments())
+    }, [])
 
-  const addApartment = async newApartment => {
-    try {
-      const res = await apartmentsService.create(newApartment)
-      setApartments(apartments.concat(res))
-      console.log(res)
-    }catch(exception){
-      console.log(exception)
-    }
-   
-  }
 
-  return (
-    <div>
-      <NavigationBar apartments={apartments}/>
-      <div className="grid-view">
-      <ApartmentGrid apartments={apartments} />
-      </div>
-    </div>
-  )
+    return (
+        <div>
+            <NavigationBar />
+            <div className="grid-view">
+                <ApartmentGrid />
+            </div>
+        </div>
+    )
 }
 
-export default App;
+export default App

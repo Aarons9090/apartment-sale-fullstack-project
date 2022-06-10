@@ -16,7 +16,7 @@ const apartmentSlice = createSlice({
     }
 })
 
-export const {appendApartment, setApartments} = apartmentSlice.reducer
+export const {appendApartment, setApartments} = apartmentSlice.actions
 
 export const initializeApartments = () => {
     return async dispatch => {
@@ -35,3 +35,5 @@ export const addApartment = apartmentObj => {
         } 
     }
 }
+
+export default apartmentSlice.reducer
