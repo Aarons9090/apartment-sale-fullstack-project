@@ -66,7 +66,7 @@ const NavigationBar = () => {
                 : ""
         }
         `
-        const strippedUrl = url.replace(/\s/g, "").strip()
+        const strippedUrl = url.replace(/\s/g, "")
         console.log(strippedUrl)
         navigate(strippedUrl)
     }
