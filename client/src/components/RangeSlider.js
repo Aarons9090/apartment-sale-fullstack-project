@@ -6,8 +6,8 @@ const valuetext = value => {
 }
 
 const RangeSlider = ({ title, max, min, roundBy, setFilter }) => {
-    const roundedMin = Math.round(min / roundBy) * roundBy
-    const roundedMax = Math.round(max / roundBy) * roundBy
+    const roundedMin = Math.floor(min / roundBy) * roundBy
+    const roundedMax = Math.ceil(max / roundBy) * roundBy
 
     const minimumGap = roundedMax * 0.1
 

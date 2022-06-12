@@ -11,13 +11,11 @@ import {
 import "../styles/NavigationBar.css"
 import apartmentService from "../services/apartments"
 import Dropdown from "./Dropdown"
-import SortBar from "./SortBar"
 import RangeSlider from "./RangeSlider"
 import { useNavigate } from "react-router-dom"
 
 const NavigationBar = () => {
     const [cities, setCities] = useState([])
-    const apartments = useSelector(state => state.apartments)
     const [maxSize, setMaxSize] = useState("")
     const [minSize, setMinSize] = useState("")
     const [maxPrice, setMaxPrice] = useState("")

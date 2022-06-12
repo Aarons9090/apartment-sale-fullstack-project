@@ -14,15 +14,16 @@ const ApartmentGrid = () => {
 
     const query = useQuery()
 
-    const type = query.get("type")
-    const city = query.get("city")
-    const rooms = query.get("rooms")
-    const maxPrice = query.get("maxPrice")
-    const minPrice = query.get("minPrice")
-    const maxSize = query.get("maxSize")
-    const minSize = query.get("minSize")
+    // convert query to JSON of params
+    let params = {}
+    for(const p of query) {
+        params[p[0]] = p[1]
+    }
+    
+    const {type, city, rooms, maxPrice, minPrice, maxSize, minSize} = params
 
     const getFilteredApartments = () => {
+
         return apartments
             .filter(a => (type ? a.apartmentType === type : a))
             .filter(a => (city ? a.city === city : a))
@@ -35,7 +36,7 @@ const ApartmentGrid = () => {
 
     return apartments ? (
         <div className="search-results">
-            <SortBar apartments={apartments} />
+            <SortBar length={getFilteredApartments().length} />
             <div className="grid">
                 {getFilteredApartments()
                     .slice()
