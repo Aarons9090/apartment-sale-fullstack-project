@@ -42,39 +42,35 @@ const NavigationBar = () => {
         fetchData()
     }, [])
 
-    const searchFilter = useSelector(state => state.searchFilter)
-
     const filters = useSelector(state => state.searchFilter)
 
     const handleSearch = event => {
         event.preventDefault()
-        console.log(filters, searchFilter)
-        const url = `/search?
-        ${filters.type ? `type=${filters.type}&` : ""}
-        ${filters.city ? `city=${filters.city.replace(/\s/g, "-")}&` : ""}
-        ${filters.rooms ? `rooms=${filters.rooms}&` : ""}
-        ${
-            filters.size
-                ? `minSize=${filters.size.min}&maxSize=${filters.size.max}&`
-                : ""
+
+        const params = new URLSearchParams()
+        if (filters.type) params.append("type", filters.type)
+        if (filters.city) params.append("city", filters.city)
+        if (filters.rooms) params.append("rooms", filters.rooms)
+        if (filters.size) {
+            params.append("maxSize", filters.size.max)
+            params.append("minSize", filters.size.min)
         }
-        ${
-            filters.price
-                ? `minPrice=${filters.price.min}&maxPrice=${filters.price.max}&`
-                : ""
+        if (filters.price) {
+            params.append("maxPrice", filters.price.max)
+            params.append("minPrice", filters.price.min)
         }
-        `
-        const strippedUrl = url.replace(/\s/g, "")
-        console.log(strippedUrl)
-        navigate(strippedUrl)
+
+        const url = `/search?${params.toString()}`
+        console.log(url)
+        navigate(url)
     }
 
     return minPrice ? (
         <div className="top">
             <div className="top-bar"></div>
-            
+
             <div className="filter-group">
-            <div className="filler-bar"></div>
+                <div className="filler-bar"></div>
                 <div className="search-bar">
                     <Stack direction="row" spacing={2}>
                         <Dropdown
