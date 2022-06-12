@@ -21,6 +21,10 @@ body {
   justify-content: space-evenly;
 }
 
+.page-content {
+  position: relative;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

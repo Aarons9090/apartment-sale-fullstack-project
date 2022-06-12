@@ -1,26 +1,26 @@
 import { useEffect } from "react"
 import NavigationBar from "./components/NavigationBar"
-import ApartmentGrid from "./components/ApartmentGrid"
 import { useDispatch } from "react-redux"
 import { initializeApartments } from "./reducers/apartmentReducer"
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, useNavigate } from "react-router-dom"
+import SearchPage from "./components/pages/SearchPage"
 
 function App() {
     const dispatch = useDispatch()
-
+    const navigate = useNavigate()
+    
     useEffect(() => {
         dispatch(initializeApartments())
         //dispatch(initializeFilter())
     }, [dispatch])
 
     return (
-        <div>
-            <NavigationBar />
+        
             <Routes>
-                <Route path="/" element={<ApartmentGrid />} />
-                <Route path="/search" element={<ApartmentGrid />} />
+                <Route path="/" element={<SearchPage />} />
+                <Route path="/search" element={<SearchPage />} />
             </Routes>
-        </div>
+        
     )
 }
 
