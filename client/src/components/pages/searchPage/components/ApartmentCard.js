@@ -1,4 +1,5 @@
-import "../styles/ApartmentCard.css"
+import "../../../../styles/ApartmentCard.css"
+
 const ApartmentCard = ({ apartment }) => {
     let price;
     switch (apartment.price.length) {

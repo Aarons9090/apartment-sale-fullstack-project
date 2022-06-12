@@ -1,9 +1,10 @@
 import ApartmentCard from "./ApartmentCard"
-import "../styles/ApartmentGrid.css"
+import "../../../../styles/ApartmentGrid.css"
 import { useSelector } from "react-redux"
 import { useLocation } from "react-router-dom"
 import { useMemo } from "react"
 import SortBar from "./SortBar"
+
 const ApartmentGrid = () => {
     const apartments = useSelector(state => state.apartments)
 

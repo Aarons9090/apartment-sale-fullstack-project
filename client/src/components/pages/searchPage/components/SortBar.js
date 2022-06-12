@@ -1,5 +1,5 @@
-import "../styles/NavigationBar.css"
-import SortDropdown from "./Dropdown"
+import "../../../../styles/NavigationBar.css"
+import SortDropdown from "../../../Dropdown"
 const SortBar = ({ length }) => {
     return (
         <div className="sort-bar">

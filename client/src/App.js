@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { initializeApartments } from "./reducers/apartmentReducer"
 import { Routes, Route } from "react-router-dom"
-import SearchPage from "./components/pages/SearchPage"
+import SearchPage from "./components/pages/searchPage/SearchPage"
 
 function App() {
     const dispatch = useDispatch()

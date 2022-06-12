@@ -1,5 +1,5 @@
-import NavigationBar from "../NavigationBar"
-import ApartmentGrid from "../ApartmentGrid"
+import NavigationBar from "./components/NavigationBar"
+import ApartmentGrid from "./components/ApartmentGrid"
 
 const SearchPage = () => {
     return(

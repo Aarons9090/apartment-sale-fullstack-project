@@ -7,11 +7,11 @@ import {
     setTypeFilter,
     setRoomsFilter,
     setCityFilter,
-} from "../reducers/searchFilterReducer"
-import "../styles/NavigationBar.css"
-import apartmentService from "../services/apartments"
-import Dropdown from "./Dropdown"
-import RangeSlider from "./RangeSlider"
+} from "../../../../reducers/searchFilterReducer"
+import "../../../../styles/NavigationBar.css"
+import apartmentService from "../../../../services/apartments"
+import Dropdown from "../../../Dropdown"
+import RangeSlider from "../../../RangeSlider"
 import { useNavigate } from "react-router-dom"
 
 const NavigationBar = () => {

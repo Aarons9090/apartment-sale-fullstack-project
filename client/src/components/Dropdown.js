@@ -5,7 +5,6 @@ const Dropdown = ({ content, title, setFilter }) => {
     const [selected, setSelected] = useState("")
     const [expanded, setExpanded] = useState(false)
 
-    const expand = () => setExpanded(true)
     const close = () => setExpanded(false)
 
     const contentStyle = { display: expanded ? "block" : "none" }
