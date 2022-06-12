@@ -2,9 +2,9 @@
 
 .card-area {
     min-width: 400px;
-    max-width: 530px;
-    padding: 0 50px 50px 50px;
-    flex: 1 0 34%;
+    max-width: 400px;
+    padding: 0 40px 40px 40px;
+    flex: 1 0 33%;
 }
 
 .card {
@@ -17,11 +17,13 @@
     height: 275px;
     width: 100%;
 }
+
 img {
     object-fit: cover;
     width: inherit;
     height: inherit;
 }
+
 .info-box {
     text-transform: capitalize;
     margin: 20px;
@@ -31,6 +33,7 @@ img {
     font-family: 'Roboto';
     font-size: 20px;
 }
+
 .right-info-group {
     overflow: hidden;
     height: 78px;

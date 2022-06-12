@@ -1,12 +1,26 @@
 
 .search-results {
-    margin: 100px 100px 50px 100px;
+    margin: 0 auto 50px auto;
+    position: relative;
 }
 
+.sort-bar {
+    margin: 50px auto 50px auto;
+    height: 50px;
+    width: 70%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--wp-preset--color--secondary-gray);
+}
 
+.found {
+    position: relative;
+    font-size: x-large;
+}
 
 .grid {
-    margin: 70px 50px 0px 50px;
+    margin: 70px auto 0px auto;
     max-width: 1900px;
     justify-content: center;
     display: flex;

@@ -123,7 +123,6 @@ const NavigationBar = () => {
                         <button onClick={handleSearch}>Seach</button>
                     </Stack>
                 </div>
-                <SortBar apartments={apartments} />
             </div>
         </div>
     ) : null

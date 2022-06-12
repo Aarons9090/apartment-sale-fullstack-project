@@ -16,15 +16,6 @@ body {
   --wp-preset--color--secondary-gray: rgba(112, 112, 112, 1);
 }
 
-.grid-view {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.page-content {
-  position: relative;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

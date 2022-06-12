@@ -1,9 +1,8 @@
 .top {
-    height: 450px;
+    height: 350px;
 }
 
 .top-bar {
-
     padding: 10px;
     height: 40px;
     width: inherit;
@@ -36,22 +35,6 @@
     position: absolute;
     z-index: 10;
     top: 50px;
-}
-
-.sort-bar {
-    padding: 10px;
-    height: 50px;
-    width: 70%;
-    bottom: 0;
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--wp-preset--color--secondary-gray);
-}
-
-.found {
-    position: relative;
-    font-size: x-large;
 }
 
 .rangeslide-container {

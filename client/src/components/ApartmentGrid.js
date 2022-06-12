@@ -3,7 +3,7 @@ import "../styles/ApartmentGrid.css"
 import { useSelector } from "react-redux"
 import { useLocation } from "react-router-dom"
 import { useMemo } from "react"
-
+import SortBar from "./SortBar"
 const ApartmentGrid = () => {
     const apartments = useSelector(state => state.apartments)
 
@@ -35,6 +35,7 @@ const ApartmentGrid = () => {
 
     return apartments ? (
         <div className="search-results">
+            <SortBar apartments={apartments} />
             <div className="grid">
                 {getFilteredApartments()
                     .slice()
