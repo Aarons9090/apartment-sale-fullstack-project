@@ -8,8 +8,16 @@ const FilterDropdown = ({ content, title, setFilter, style }) => {
     const close = () => setExpanded(false)
 
     const contentStyle = { display: expanded ? "block" : "none" }
-    const arrowNotSelected = { transform: "rotate(135deg)" }
-    const arrowSelected = { transform: "rotate(-45deg)", margin: "5px 5px" }
+    const arrowNotSelected = {
+        transform: "rotate(135deg)",
+        borderColor: "var(--wp--preset--shadow)",
+        margin: "auto 7px"
+    }
+    const arrowSelected = {
+        transform: "rotate(-45deg)",
+        borderColor: "var(--wp--preset--shadow)",
+        margin: "auto 7px",
+    }
 
     const select = event => {
         const value = event.target.textContent
@@ -42,7 +50,14 @@ const FilterDropdown = ({ content, title, setFilter, style }) => {
                     setExpanded(!expanded)
                 }}
             >
-                
+                {selected ? (
+                    <span className="filter-dropdown-selected">{selected}</span>
+                ) : (
+                    <span className="filter-dropdown-placeholder">
+                        {`Select ${title}`}
+                    </span>
+                )}
+
                 <div
                     style={expanded ? arrowSelected : arrowNotSelected}
                     className="arrow"

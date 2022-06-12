@@ -25,7 +25,6 @@
     color: white;
 }
 
-
 .search-bar {
     color: var(--wp-preset--color--secondary-gray);
     height: 250px;
@@ -44,11 +43,16 @@
     border: 1px solid;
     line-height: 10%;
 }
+
 .filter-dropdown-row {
     justify-content: space-evenly;
     display: flex;
     flex-wrap: wrap;
 }
+
 .search-bar-title {
     font-size: x-large;
+    line-height: 40px;
+    padding: auto;
+    margin: 20px;
 }

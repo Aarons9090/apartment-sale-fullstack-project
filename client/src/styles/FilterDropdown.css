@@ -12,15 +12,16 @@
   .filter-dropdown-button {
     width: inherit;
     border: 2px solid;
-    padding-top: 10px;
+   
     margin-top: 2px;
-    display: flex;
-    justify-content: end;
     font-size: 13px;
-    height: 20px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
   }
   
   .filter-dropdown-element {
+    width: inherit;
     background-color: white;
     padding: 3px;
     margin-top: -1px;
@@ -37,12 +38,16 @@
     padding: 5px;
     border: 1px solid;
   }
-  
-  .arrow {
-    display: inline-block;
-    width: 5px;
-    height: 5px;
-    border-top: 2px solid #000;
-    border-right: 2px solid #000;
-    
+
+  .filter-dropdown-placeholder,
+  .filter-dropdown-selected {
+    padding-left: 5px;
+    margin: auto 0;
   }
+
+  .filter-dropdown-selected {
+    font-size: medium;
+    color: black;
+  }
+
+  
