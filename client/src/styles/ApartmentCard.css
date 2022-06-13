@@ -1,15 +1,10 @@
 
-
-.card-area {
-    min-width: 400px;
-    max-width: 400px;
-    padding: 0 40px 40px 40px;
-    flex: 1 0 33%;
-}
-
 .card {
+    min-width: 370px;
+    max-width: 400px;
+    flex: 1 0 33%;
     background-color: white;
-    margin: auto;
+    margin: 20px 30px;
     box-shadow: var(--wp--preset--shadow)
 }
 

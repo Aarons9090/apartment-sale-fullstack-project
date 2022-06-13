@@ -1,5 +1,6 @@
 .rangeslider {
-    margin: 0 15px 10px 15px;
+    margin: 0px 15px 10px 15px;
+    line-height: 1rem;
     font-size: larger;
     max-width: 260px;
     min-width: 200px;

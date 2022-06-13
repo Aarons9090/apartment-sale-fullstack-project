@@ -10,7 +10,7 @@ const ApartmentCard = ({ apartment }) => {
     }
 
     return (
-        <div className="card-area">
+        
             <div className="card">
                 <div className="image-container">
                     <img src={apartment.image} alt="house" />
@@ -25,7 +25,7 @@ const ApartmentCard = ({ apartment }) => {
                     </div>
                 </div>
             </div>
-        </div>
+       
 
     )
 }
