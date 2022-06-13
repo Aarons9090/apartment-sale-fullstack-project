@@ -47,6 +47,7 @@
 }
 
 .search-submit-button {
+    cursor: pointer;
     background-color: var(--wp-preset--color--highlight-orange);
     color: white;
     font-size: x-large;

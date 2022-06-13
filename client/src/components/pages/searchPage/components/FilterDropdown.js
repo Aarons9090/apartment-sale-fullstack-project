@@ -4,7 +4,6 @@ import { useState } from "react"
 const FilterDropdown = ({ content, title, setFilter, style }) => {
     const [selected, setSelected] = useState("")
     const [expanded, setExpanded] = useState(false)
-
     const close = () => setExpanded(false)
 
     const contentStyle = { display: expanded ? "block" : "none" }
@@ -69,7 +68,9 @@ const FilterDropdown = ({ content, title, setFilter, style }) => {
                     <div
                         key={obj}
                         className="filter-dropdown-element"
+                        
                         onClick={select}
+                        onMouseOver
                     >
                         {obj}
                     </div>

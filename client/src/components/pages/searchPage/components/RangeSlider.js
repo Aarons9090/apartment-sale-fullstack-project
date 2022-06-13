@@ -28,6 +28,10 @@ const RangeSlider = ({ title, max, min, roundBy, setFilter, symbol }) => {
             backgroundColor: "white",
             border: "2px solid var(--wp-preset--color--secondary-gray)"
         },
+        "& .MuiSlider-thumb:hover": {
+            width: "30px",
+            height: "30px"
+        },
         "& .MuiSlider-rail": {
             backgroundColor: "var(--wp-preset--color--secondary-gray)",
             opacity: "1"

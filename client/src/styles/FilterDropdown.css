@@ -1,49 +1,68 @@
-
 .filter-dropdown {
-    margin: 10px 10px 10px 10px;
-    cursor: pointer;
-    position: relative;
-    font-size: large;
-    line-height: 0;
-  }
-  
-  .filter-dropdown-button {
-    border: 2px solid;
-    margin-top: 2px;
-    font-size: 13px;
-    height: 40px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .filter-dropdown-element {
-    width: inherit;
-    background-color: white;
-    padding: 3px;
-    margin-top: -1px;
-  }
-  
-  .filter-dropdown-content {
-    z-index: 1;
-    width: inherit;
-    font-size: 14px;
-    position: absolute;
-  }
-  
-  .filter-dropdown-content div {
-    padding: 5px;
-    border: 1px solid;
-  }
+  margin: 10px 10px 10px 10px;
+  cursor: pointer;
+  position: relative;
+  font-size: large;
+  line-height: 0;
+}
 
-  .filter-dropdown-placeholder,
-  .filter-dropdown-selected {
-    padding-left: 5px;
-    margin: auto 0;
-  }
+.filter-dropdown-button {
+  border: 2px solid;
+  margin-top: 2px;
+  font-size: 13px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
 
-  .filter-dropdown-selected {
-    font-size: medium;
-    color: black;
-  }
+.filter-dropdown-content {
+  max-height: 300px;
+  border-bottom: 1px solid;
+  overflow: auto;
+  z-index: 1;
+  width: 100%;
+  font-size: 14px;
+  position: absolute;
+}
 
+.filter-dropdown-content::-webkit-scrollbar {
+  width: 10px;
   
+}
+
+.filter-dropdown-content::-webkit-scrollbar-track {
+  background-color: white;
+  border-right: 1px solid;
+}
+
+.filter-dropdown-content::-webkit-scrollbar-thumb {
+  background-color: var(--wp-preset--color--secondary-gray)
+}
+
+.filter-dropdown-element {
+  background-color: white;
+  margin-top: -1px;
+}
+
+.filter-dropdown-element:hover {
+  background-color: var(--wp-preset--color--highlight-orange);
+  color: black;
+  font-size: large;
+  padding-left: 20px;
+}
+
+.filter-dropdown-content div {
+  padding: 15px;
+  border: 1px solid;
+}
+
+.filter-dropdown-placeholder,
+.filter-dropdown-selected {
+  padding-left: 5px;
+  margin: auto 0;
+}
+
+.filter-dropdown-selected {
+  font-size: medium;
+  color: black;
+}
