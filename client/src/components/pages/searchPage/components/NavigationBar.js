@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { Stack } from "@mui/material"
 import {
     setPriceFilter,
     setSizeFilter,
@@ -51,17 +50,25 @@ const NavigationBar = () => {
         if (filters.type) params.append("type", filters.type)
         if (filters.city) params.append("city", filters.city)
         if (filters.rooms) params.append("rooms", filters.rooms)
+
+        // no size param if value same as default
         if (filters.size) {
-            params.append("maxSize", filters.size.max)
-            params.append("minSize", filters.size.min)
+            if (filters.size.max && filters.size.max !== maxSize) {
+                params.append("maxSize", filters.size.max)
+            }
+            if (filters.size.min && filters.size.min !== minSize) {
+                params.append("minSize", filters.size.min)
+            }
         }
+
         if (filters.price) {
-            params.append("maxPrice", filters.price.max)
-            params.append("minPrice", filters.price.min)
+            if (filters.price.max && filters.price.max !== Math.ceil(maxPrice/1000)*1000)
+                params.append("maxPrice", filters.price.max)
+            if (filters.price.min && filters.price.min !== Math.floor(minPrice/1000)*1000)
+                params.append("minPrice", filters.price.min)
         }
 
         const url = `/search?${params.toString()}`
-        console.log(url)
         navigate(url)
     }
 
@@ -137,7 +144,12 @@ const NavigationBar = () => {
                             }}
                         />
 
-                        <button className="search-submit-button" onClick={handleSearch}>Seach</button>
+                        <button
+                            className="search-submit-button"
+                            onClick={handleSearch}
+                        >
+                            Seach
+                        </button>
                     </div>
                 </div>
             </div>

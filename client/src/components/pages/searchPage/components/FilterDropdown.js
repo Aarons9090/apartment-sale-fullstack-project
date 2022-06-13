@@ -68,9 +68,7 @@ const FilterDropdown = ({ content, title, setFilter, style }) => {
                     <div
                         key={obj}
                         className="filter-dropdown-element"
-                        
                         onClick={select}
-                        onMouseOver
                     >
                         {obj}
                     </div>
