@@ -31,20 +31,11 @@
     box-shadow: var(--wp--preset--shadow);
     z-index: 10;
     margin: 3rem auto;
-    
     position: relative;
-
-    
 }   
 
-.rangeslide-container {
-    width: 315px;
-    height: 85px;
-    border: 1px solid;
-    line-height: 10%;
-}
-
-.filter-dropdown-row {
+.filter-dropdown-row,
+.slider-row {
     justify-content: space-evenly;
     display: flex;
     flex-wrap: wrap;
@@ -53,4 +44,16 @@
 .search-bar-title {
     font-size: x-large;
     margin: 10px;
+}
+
+.search-submit-button {
+    background-color: var(--wp-preset--color--highlight-orange);
+    color: white;
+    font-size: x-large;
+    border: none;
+    height: 50px;
+    margin: auto 15px 10px 10px;
+    width: 70%;
+    max-width: 200px;
+    min-width: 150px;
 }

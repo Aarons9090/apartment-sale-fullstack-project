@@ -1,0 +1,14 @@
+.rangeslider {
+    margin: 0 15px 10px 15px;
+    font-size: larger;
+    max-width: 260px;
+    min-width: 200px;
+    flex: 1 0 33%;
+}
+
+
+.rangeslider p {
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+}
+

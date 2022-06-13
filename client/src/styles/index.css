@@ -14,6 +14,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   --wp--preset--shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   --wp-preset--color--secondary-gray: rgba(112, 112, 112, 1);
+  --wp-preset--color--highlight-orange: rgba(229,175,82,1);
 }
 
 code {

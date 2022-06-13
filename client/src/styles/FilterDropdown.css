@@ -1,16 +1,13 @@
 
 .filter-dropdown {
-    flex: 1 0 33%;
     margin: 10px 10px 10px 10px;
-    max-width: 300px;
-    min-width: 150px;
     cursor: pointer;
     position: relative;
     font-size: large;
+    line-height: 0;
   }
   
   .filter-dropdown-button {
-    width: inherit;
     border: 2px solid;
     margin-top: 2px;
     font-size: 13px;

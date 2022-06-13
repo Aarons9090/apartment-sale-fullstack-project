@@ -43,7 +43,7 @@ const FilterDropdown = ({ content, title, setFilter, style }) => {
             tabIndex={0}
             onBlur={onBlur}
         >
-            {title}
+            <p>{title}</p>
             <div
                 className="filter-dropdown-button"
                 onClick={() => {

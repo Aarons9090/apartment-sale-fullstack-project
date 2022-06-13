@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { Grid, Stack } from "@mui/material"
+import { Stack } from "@mui/material"
 import {
     setPriceFilter,
     setSizeFilter,
@@ -11,7 +11,7 @@ import {
 import "../../../../styles/NavigationBar.css"
 import apartmentService from "../../../../services/apartments"
 import FilterDropdown from "./FilterDropdown"
-import RangeSlider from "../../../RangeSlider"
+import RangeSlider from "./RangeSlider"
 import { useNavigate } from "react-router-dom"
 
 const NavigationBar = () => {
@@ -65,24 +65,28 @@ const NavigationBar = () => {
         navigate(url)
     }
 
-    const wideButtonStyle = {width: "90%", maxWidth:"280px", minWidth: "200px"}
-    const narrowButtonStyle = {width: "70%", maxWidth:"200px", minWidth: "150px"}
+    const wideButtonStyle = {
+        width: "90%",
+        maxWidth: "260px",
+        minWidth: "200px",
+    }
+    const narrowButtonStyle = {
+        width: "70%",
+        maxWidth: "200px",
+        minWidth: "150px",
+    }
 
     return minPrice ? (
         <div className="top">
             <div className="nav-bar"></div>
 
             <div className="filter-group">
-                <div className="filler-bar">
-                    
-                </div>
+                <div className="filler-bar"></div>
                 <div className="search-bar">
                     <span className="search-bar-title">
                         Search for listings
                     </span>
-                        <div
-                        className="filter-dropdown-row"
-                    >
+                    <div className="filter-dropdown-row">
                         <FilterDropdown
                             style={wideButtonStyle}
                             content={cities}
@@ -91,8 +95,7 @@ const NavigationBar = () => {
                                 dispatch(setCityFilter(value))
                             }}
                         />
-                        
-                        
+
                         <FilterDropdown
                             style={wideButtonStyle}
                             content={types}
@@ -101,8 +104,7 @@ const NavigationBar = () => {
                                 dispatch(setTypeFilter(value))
                             }}
                         />
-                       
-                        
+
                         <FilterDropdown
                             style={narrowButtonStyle}
                             content={rooms}
@@ -111,15 +113,15 @@ const NavigationBar = () => {
                                 dispatch(setRoomsFilter(value))
                             }}
                         />
-                        </div>
-                        
-                    
-                    <Stack direction="row" spacing={2}>
+                    </div>
+
+                    <div className="slider-row">
                         <RangeSlider
                             title={"price"}
                             min={minPrice}
                             max={maxPrice}
                             roundBy={1000}
+                            symbol="€"
                             setFilter={value => {
                                 dispatch(setPriceFilter(value))
                             }}
@@ -129,12 +131,14 @@ const NavigationBar = () => {
                             min={minSize}
                             max={maxSize}
                             roundBy={1}
+                            symbol={`m\xB2`}
                             setFilter={value => {
                                 dispatch(setSizeFilter(value))
                             }}
                         />
-                        <button onClick={handleSearch}>Seach</button>
-                    </Stack>
+
+                        <button className="search-submit-button" onClick={handleSearch}>Seach</button>
+                    </div>
                 </div>
             </div>
         </div>
