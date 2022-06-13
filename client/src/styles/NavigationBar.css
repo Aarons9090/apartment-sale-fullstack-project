@@ -1,41 +1,41 @@
 .top {
-    height: 350px;
+    display: flex;
+    flex-direction: column;
 }
 
-.top-bar {
+.nav-bar {
     padding: 10px;
     height: 40px;
     width: inherit;
     background-color: rgb(26, 17, 86);
-
 }
 
 .filter-group {
     width: 100%;
-    height: inherit;
-    position: relative;
-    display: flex;
-    justify-content: center;
+
 }
 
 .filler-bar {
+    position: absolute;
     width: 100%;
     height: 200px;
     background-color: darkslateblue;
-    color: white;
 }
 
 .search-bar {
     color: var(--wp-preset--color--secondary-gray);
-    height: 250px;
+    padding: 20px;
     max-width: 1200px;
     width: 70%;
     background-color: white;
     box-shadow: var(--wp--preset--shadow);
-    position: absolute;
     z-index: 10;
-    top: 50px;
-}
+    margin: 3rem auto;
+    
+    position: relative;
+
+    
+}   
 
 .rangeslide-container {
     width: 315px;
@@ -52,7 +52,5 @@
 
 .search-bar-title {
     font-size: x-large;
-    line-height: 40px;
-    padding: auto;
-    margin: 20px;
+    margin: 10px;
 }

@@ -70,10 +70,12 @@ const NavigationBar = () => {
 
     return minPrice ? (
         <div className="top">
-            <div className="top-bar"></div>
+            <div className="nav-bar"></div>
 
             <div className="filter-group">
-                <div className="filler-bar"></div>
+                <div className="filler-bar">
+                    
+                </div>
                 <div className="search-bar">
                     <span className="search-bar-title">
                         Search for listings
