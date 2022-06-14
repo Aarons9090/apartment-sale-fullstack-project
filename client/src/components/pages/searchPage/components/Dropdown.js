@@ -1,11 +1,13 @@
-import "../styles/SortDropdown.css"
+import "../../../../styles/SortDropdown.css"
 import { useState } from "react"
-
-const Dropdown = ({ content, title, setFilter }) => {
+import { useDispatch } from "react-redux"
+import { setSortFilter } from "../../../../reducers/searchFilterReducer"
+const Dropdown = ({ content, title }) => {
     const [selected, setSelected] = useState("")
     const [expanded, setExpanded] = useState(false)
 
     const close = () => setExpanded(false)
+    const dispatch = useDispatch()
 
     const contentStyle = { display: expanded ? "block" : "none" }
     const arrowNotSelected = { transform: "rotate(135deg)" }
@@ -16,10 +18,8 @@ const Dropdown = ({ content, title, setFilter }) => {
         console.log(value)
         close()
         setSelected(value)
-
-        if (setFilter) {
-            setFilter(value)
-        }
+        dispatch(setSortFilter(value))
+        
     }
 
     const onBlur = event => {

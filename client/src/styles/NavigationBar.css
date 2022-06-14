@@ -41,6 +41,11 @@
     flex-wrap: wrap;
 }
 
+.slider-row {
+    margin-bottom: 10px;
+    
+}
+
 .search-bar-title {
     font-size: x-large;
     margin: 10px;

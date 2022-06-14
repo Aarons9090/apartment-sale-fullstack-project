@@ -28,22 +28,13 @@ const searchFilterSlice = createSlice({
         },
         setCityFilter(state, action) {
             return {...state, city: action.payload}
+        },
+        setSortFilter(state, action) {
+            return {...state, sort: action.payload}
         }
     },
 })
 
-export const { setFilter, setPriceFilter, setSizeFilter, setTypeFilter, setRoomsFilter, setCityFilter } = searchFilterSlice.actions
-
-export const initializeFilter = () => {
-    return async dispatch => {
-        const {size, price} = await apartmentService.getSearchData()
-        const filterData = {
-            size,
-            price
-        }
-        console.log(filterData)
-        dispatch(setFilter(filterData))
-    }
-}
+export const { setFilter, setPriceFilter, setSizeFilter, setTypeFilter, setRoomsFilter, setCityFilter, setSortFilter } = searchFilterSlice.actions
 
 export default searchFilterSlice.reducer

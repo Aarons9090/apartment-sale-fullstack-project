@@ -1,4 +1,3 @@
-
 .search-results {
     margin: 0 auto 50px auto;
     position: relative;
@@ -16,7 +15,7 @@
 
 .found {
     position: relative;
-    font-size: x-large;
+    font-size: 1.2rem;
 }
 
 .grid {

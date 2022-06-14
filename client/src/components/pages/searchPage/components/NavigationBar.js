@@ -8,9 +8,9 @@ import {
     setCityFilter,
 } from "../../../../reducers/searchFilterReducer"
 import "../../../../styles/NavigationBar.css"
-import apartmentService from "../../../../services/apartments"
 import FilterDropdown from "./FilterDropdown"
 import RangeSlider from "./RangeSlider"
+import useUrl from "../hooks/useUrl"
 import { useNavigate } from "react-router-dom"
 
 const NavigationBar = () => {
@@ -24,12 +24,14 @@ const NavigationBar = () => {
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
+    const getUrl = useUrl()
+    const maxValues = useSelector(state => state.apartmentValues)
 
     useEffect(() => {
-        const fetchData = async () => {
-            const { size, rooms, types, price, cities } =
-                await apartmentService.getSearchData()
-
+        
+        if(maxValues.length !== 0){
+            const { size, rooms, types, price, cities } = maxValues
+            
             setCities(cities)
             setMaxSize(size.max)
             setMinSize(size.min)
@@ -38,37 +40,12 @@ const NavigationBar = () => {
             setMaxPrice(price.max)
             setMinPrice(price.min)
         }
-        fetchData()
-    }, [])
-
-    const filters = useSelector(state => state.searchFilter)
+       
+    }, [maxValues])
 
     const handleSearch = event => {
         event.preventDefault()
-
-        const params = new URLSearchParams()
-        if (filters.type) params.append("type", filters.type)
-        if (filters.city) params.append("city", filters.city)
-        if (filters.rooms) params.append("rooms", filters.rooms)
-
-        // no size param if value same as default
-        if (filters.size) {
-            if (filters.size.max && filters.size.max !== maxSize) {
-                params.append("maxSize", filters.size.max)
-            }
-            if (filters.size.min && filters.size.min !== minSize) {
-                params.append("minSize", filters.size.min)
-            }
-        }
-
-        if (filters.price) {
-            if (filters.price.max && filters.price.max !== Math.ceil(maxPrice/1000)*1000)
-                params.append("maxPrice", filters.price.max)
-            if (filters.price.min && filters.price.min !== Math.floor(minPrice/1000)*1000)
-                params.append("minPrice", filters.price.min)
-        }
-
-        const url = `/search?${params.toString()}`
+        const url = getUrl
         navigate(url)
     }
 
