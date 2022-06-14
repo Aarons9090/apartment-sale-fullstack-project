@@ -9,7 +9,7 @@ const useUrl = () => {
 
     const filters = useSelector(state => state.searchFilter)
     const maxValues = useSelector(state => state.apartmentValues)
-
+    console.log(filters)
     useEffect(() => {
         if (maxValues.length !== 0) {
             const { size, price } = maxValues
@@ -26,15 +26,7 @@ const useUrl = () => {
     if (filters.city) params.append("city", filters.city)
     if (filters.rooms) params.append("rooms", filters.rooms)
 
-    // no size param if value same as default
-    if (filters.size) {
-        if (filters.size.min && filters.size.min !== minSize) {
-            params.append("minSize", filters.size.min)
-        }
-        if (filters.size.max && filters.size.max !== maxSize) {
-            params.append("maxSize", filters.size.max)
-        }
-    }
+    // no size or price param if value same as default
 
     if (filters.price) {
         if (
@@ -48,6 +40,17 @@ const useUrl = () => {
         )
             params.append("maxPrice", filters.price.max)
     }
+
+    if (filters.size) {
+        if (filters.size.min && filters.size.min !== minSize) {
+            params.append("minSize", filters.size.min)
+        }
+        if (filters.size.max && filters.size.max !== maxSize) {
+            params.append("maxSize", filters.size.max)
+        }
+    }
+
+    if(filters.sort) params.append("sort", filters.sort)
 
     const url = `/search?${params.toString()}`
     return url

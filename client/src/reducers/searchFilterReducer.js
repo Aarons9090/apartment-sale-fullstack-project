@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import apartmentService from "../services/apartments"
+
 
 const initialState = []
 
@@ -11,13 +11,13 @@ const searchFilterSlice = createSlice({
             return action.payload
         },
         setPriceFilter(state, action) {
-            const min = action.payload[0]
-            const max = action.payload[1]
+            const min = action.payload.min
+            const max = action.payload.max
             return { ...state, price: { min, max } }
         },
         setSizeFilter(state, action) {
-            const min = action.payload[0]
-            const max = action.payload[1]
+            const min = action.payload.min
+            const max = action.payload.max
             return { ...state, size: { min, max } }
         },
         setTypeFilter(state, action) {

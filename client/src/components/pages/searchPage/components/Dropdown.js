@@ -1,25 +1,40 @@
 import "../../../../styles/SortDropdown.css"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
-import { setSortFilter } from "../../../../reducers/searchFilterReducer"
-const Dropdown = ({ content, title }) => {
+import useUrl from "../hooks/useUrl"
+import { useNavigate } from "react-router-dom"
+
+const Dropdown = ({ content, title, setFilter }) => {
     const [selected, setSelected] = useState("")
     const [expanded, setExpanded] = useState(false)
 
     const close = () => setExpanded(false)
     const dispatch = useDispatch()
-
+    const getUrl = useUrl()
+    const navigate = useNavigate()
+    
+    const url = getUrl
     const contentStyle = { display: expanded ? "block" : "none" }
     const arrowNotSelected = { transform: "rotate(135deg)" }
     const arrowSelected = { transform: "rotate(-45deg)", margin: "5px 5px" }
+    
+
+    useEffect(() => {
+        navigate(url)
+    }, [navigate, url])
 
     const select = event => {
+        event.preventDefault()
         const value = event.target.textContent
         console.log(value)
-        close()
-        setSelected(value)
-        dispatch(setSortFilter(value))
         
+        setSelected(value)
+        dispatch(setFilter(value))
+        const url = getUrl
+        console.log(url)
+        
+
+        close()
     }
 
     const onBlur = event => {
@@ -46,11 +61,11 @@ const Dropdown = ({ content, title }) => {
             <div style={contentStyle} className="dropdown-content">
                 {content.map(obj => (
                     <div
-                        key={obj}
+                        key={obj.key}
                         className="dropdown-element"
                         onClick={select}
                     >
-                        {obj}
+                        {obj.title}
                     </div>
                 ))}
             </div>

@@ -28,10 +28,9 @@ const NavigationBar = () => {
     const maxValues = useSelector(state => state.apartmentValues)
 
     useEffect(() => {
-        
-        if(maxValues.length !== 0){
+        if (maxValues.length !== 0) {
             const { size, rooms, types, price, cities } = maxValues
-            
+
             setCities(cities)
             setMaxSize(size.max)
             setMinSize(size.min)
@@ -40,7 +39,6 @@ const NavigationBar = () => {
             setMaxPrice(price.max)
             setMinPrice(price.min)
         }
-       
     }, [maxValues])
 
     const handleSearch = event => {
@@ -107,7 +105,12 @@ const NavigationBar = () => {
                             roundBy={1000}
                             symbol="€"
                             setFilter={value => {
-                                dispatch(setPriceFilter(value))
+                                dispatch(
+                                    setPriceFilter({
+                                        min: value[0],
+                                        max: value[1],
+                                    })
+                                )
                             }}
                         />
                         <RangeSlider
@@ -117,7 +120,12 @@ const NavigationBar = () => {
                             roundBy={1}
                             symbol={`m\xB2`}
                             setFilter={value => {
-                                dispatch(setSizeFilter(value))
+                                dispatch(
+                                    setSizeFilter({
+                                        min: value[0],
+                                        max: value[1],
+                                    })
+                                )
                             }}
                         />
 
