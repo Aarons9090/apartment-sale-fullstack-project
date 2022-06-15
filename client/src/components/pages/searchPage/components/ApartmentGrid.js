@@ -43,9 +43,9 @@ const ApartmentGrid = () => {
 
         switch(sort) {
             case sortingMethods.PRICE_INCREASING.title:
-                return filtered.sort((a, b) => b.price - a.price)
+                return filtered.sort((a, b) => a.price - b.price)
             case sortingMethods.PRICE_DECREASING.title:
-                return filtered.sort((a,b) => a.price - b.price)
+                return filtered.sort((a,b) => b.price - a.price)
             default: return filtered
         }
     }

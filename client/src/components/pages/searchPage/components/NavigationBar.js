@@ -21,11 +21,17 @@ const NavigationBar = () => {
     const [minPrice, setMinPrice] = useState("")
     const [rooms, setRooms] = useState([])
     const [types, setTypes] = useState([])
+    const [url, createUrl] = useUrl()
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
     
     const maxValues = useSelector(state => state.apartmentValues)
+
+    useEffect(() => {
+        console.log("hook")
+        navigate(url)
+    }, [url])
 
     useEffect(() => {
         if (maxValues.length !== 0) {
@@ -44,7 +50,8 @@ const NavigationBar = () => {
     const handleSearch = event => {
         event.preventDefault()
         console.log("navig")
-        navigate()
+        createUrl()
+        
     }
 
     const wideButtonStyle = {

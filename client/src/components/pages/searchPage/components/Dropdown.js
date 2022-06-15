@@ -20,12 +20,13 @@ const Dropdown = ({ content, title, setFilter }) => {
 
     useEffect(() => {
         createUrl()
-    }, [dispatch, createUrl])
+    }, [sorting])
 
     useEffect(() => {
         if (sorting) {
             navigate(url)
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [url])
 
     const select = event => {
@@ -36,7 +37,6 @@ const Dropdown = ({ content, title, setFilter }) => {
         const valueObj = content.find(c => c.title === value)
         setSelected(value)
         dispatch(setFilter(valueObj))
-
         close()
     }
 
