@@ -31,6 +31,7 @@ img {
 
 .right-info-group {
     overflow: hidden;
+    white-space: nowrap;
     height: 78px;
     padding-left: 40%;
     display: flex;
