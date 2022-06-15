@@ -9,7 +9,7 @@ const useUrl = () => {
 
     const filters = useSelector(state => state.searchFilter)
     const maxValues = useSelector(state => state.apartmentValues)
-    console.log(filters)
+
     useEffect(() => {
         if (maxValues.length !== 0) {
             const { size, price } = maxValues
@@ -50,7 +50,7 @@ const useUrl = () => {
         }
     }
 
-    if(filters.sort) params.append("sort", filters.sort)
+    if(filters.sort) params.append("sort", filters.sort.title)
 
     const url = `/search?${params.toString()}`
     return url

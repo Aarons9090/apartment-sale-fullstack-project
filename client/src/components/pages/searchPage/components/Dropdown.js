@@ -12,7 +12,7 @@ const Dropdown = ({ content, title, setFilter }) => {
     const dispatch = useDispatch()
     const getUrl = useUrl()
     const navigate = useNavigate()
-    
+
     const url = getUrl
     const contentStyle = { display: expanded ? "block" : "none" }
     const arrowNotSelected = { transform: "rotate(135deg)" }
@@ -21,18 +21,16 @@ const Dropdown = ({ content, title, setFilter }) => {
 
     useEffect(() => {
         navigate(url)
-    }, [navigate, url])
+    }, [dispatch, navigate, url])
 
     const select = event => {
         event.preventDefault()
         const value = event.target.textContent
-        console.log(value)
+        const valueObj = content.find(c => c.title === value)
+        console.log(valueObj)
         
         setSelected(value)
-        dispatch(setFilter(value))
-        const url = getUrl
-        console.log(url)
-        
+        dispatch(setFilter(valueObj))   
 
         close()
     }
