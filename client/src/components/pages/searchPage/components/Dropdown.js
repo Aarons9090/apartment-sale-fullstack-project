@@ -7,30 +7,35 @@ import { useNavigate } from "react-router-dom"
 const Dropdown = ({ content, title, setFilter }) => {
     const [selected, setSelected] = useState("")
     const [expanded, setExpanded] = useState(false)
+    const [sorting, setSorting] = useState("")
 
     const close = () => setExpanded(false)
     const dispatch = useDispatch()
-    const getUrl = useUrl()
+    const [url, createUrl] = useUrl()
     const navigate = useNavigate()
 
-    const url = getUrl
     const contentStyle = { display: expanded ? "block" : "none" }
     const arrowNotSelected = { transform: "rotate(135deg)" }
     const arrowSelected = { transform: "rotate(-45deg)", margin: "5px 5px" }
-    
 
     useEffect(() => {
-        navigate(url)
-    }, [dispatch, navigate, url])
+        createUrl()
+    }, [dispatch, createUrl])
+
+    useEffect(() => {
+        if (sorting) {
+            navigate(url)
+        }
+    }, [url])
 
     const select = event => {
         event.preventDefault()
         const value = event.target.textContent
+        setSorting(value)
+
         const valueObj = content.find(c => c.title === value)
-        console.log(valueObj)
-        
         setSelected(value)
-        dispatch(setFilter(valueObj))   
+        dispatch(setFilter(valueObj))
 
         close()
     }

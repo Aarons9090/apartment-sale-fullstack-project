@@ -13,7 +13,6 @@ const ApartmentGrid = () => {
         const { search } = useLocation()
         return useMemo(() => new URLSearchParams(search), [search])
     }
-
     const query = useQuery()
 
     // convert query to JSON of params
@@ -24,14 +23,14 @@ const ApartmentGrid = () => {
 
     const { type, city, rooms, maxPrice, minPrice, maxSize, minSize, sort } =
         params
-    
+
     const getFilteredApartments = () => {
         const filteredApartments = apartments
             .filter(a => (type ? a.apartmentType === type : a))
             .filter(a => (city ? a.city === city : a))
             .filter(a => (maxPrice ? a.price <= Number(maxPrice) : a))
             .filter(a => (minPrice ? a.price >= Number(minPrice) : a))
-            .filter(a => (rooms ? a.rooms === rooms : a))
+            .filter(a => (rooms ? a.rooms === Number(rooms) : a))
             .filter(a => (maxSize ? a.area <= Number(maxSize) : a))
             .filter(a => (minSize ? a.area >= Number(minSize) : a))
 
@@ -50,6 +49,8 @@ const ApartmentGrid = () => {
             default: return filtered
         }
     }
+
+
 
     return apartments ? (
         <div className="search-results">

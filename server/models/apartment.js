@@ -3,15 +3,16 @@ const mongoose = require("mongoose")
 const apartmentSchema = mongoose.Schema({
     address: String,
     city: String,
-    price: String,
-    area: String,
+    price: Number,
+    area: Number,
     description: String,
     seller: String,
     apartmentType: String,
     image: String,
     oneLiner: String,
-    year: String,
-    rooms: String
+    buildYear: Number,
+    rooms: Number,
+    addTime: Date
 })
 
 apartmentSchema.set("toJSON", {

@@ -21,7 +21,7 @@ const NavigationBar = () => {
     const [minPrice, setMinPrice] = useState("")
     const [rooms, setRooms] = useState([])
     const [types, setTypes] = useState([])
-    const getUrl = useUrl()
+
     const dispatch = useDispatch()
     const navigate = useNavigate()
     
@@ -43,8 +43,8 @@ const NavigationBar = () => {
 
     const handleSearch = event => {
         event.preventDefault()
-        const url = getUrl
-        navigate(url)
+        console.log("navig")
+        navigate()
     }
 
     const wideButtonStyle = {
