@@ -35,7 +35,10 @@ const NavigationBar = () => {
 
     useEffect(() => {
         console.log("navigating to: ", url)
-        navigate(url)
+        if(url){
+            navigate(url)
+        }
+        
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [url])
 
@@ -55,7 +58,7 @@ const NavigationBar = () => {
 
     const handleSearch = event => {
         event.preventDefault()
-        console.log("navig")
+        console.log("search")
         createUrl()
     }
 
@@ -77,7 +80,7 @@ const NavigationBar = () => {
         setSelectedCity("")
         setSelectedRooms("")
         setSelectedType("")
-        navigate("/")
+        navigate("/search")
     }
 
     return minPrice ? (
