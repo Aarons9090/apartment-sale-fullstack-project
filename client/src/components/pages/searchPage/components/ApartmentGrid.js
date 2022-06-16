@@ -12,7 +12,7 @@ const ApartmentGrid = () => {
     const [filteredApartments, setFilteredApartment] = useState([])
     const [sortedApartments, setSortedApartments] = useState([])
     const [params, setParams] = useState(null)
-    const [url, createUrl] = useUrl()
+    const [url] = useUrl()
 
     const useQuery = () => {
         const { search } = useLocation()
@@ -26,7 +26,6 @@ const ApartmentGrid = () => {
         for (const p of query) {
             paramsMap[p[0]] = p[1]
         }
-
 
         setParams(paramsMap)
     }, [url, query])
@@ -63,15 +62,23 @@ const ApartmentGrid = () => {
                     break
                 case sortingMethods.DATE_ADDED_NEWEST.title:
                     setSortedApartments(
-                        filteredApartments.sort((a, b) =>
-                            console.log(Date().parse(b.addTime))
+                        filteredApartments.sort(
+                            (a, b) => {
+                                const a_date = new Date(b.addTime)
+                                const b_date = new Date(a.addTime)
+                                return a_date - b_date
+                            }
                         )
                     )
                     break
                 case sortingMethods.DATE_ADDED_OLDEST.title:
                     setSortedApartments(
                         filteredApartments.sort(
-                            (a, b) => Date(a.addTime) > Date(b.addTime)
+                            (a, b) => {
+                                const a_date = new Date(b.addTime)
+                                const b_date = new Date(a.addTime)
+                                return b_date - a_date
+                            }
                         )
                     )
                     break
@@ -87,9 +94,16 @@ const ApartmentGrid = () => {
         <div className="search-results">
             <SortBar length={filteredApartments.length} />
             <div className="grid">
-                {sortedApartments.map(apartment => (
-                    <ApartmentCard key={apartment.id} apartment={apartment} />
-                ))}
+                {filteredApartments.length !== 0 ? (
+                    sortedApartments.map(apartment => (
+                        <ApartmentCard
+                            key={apartment.id}
+                            apartment={apartment}
+                        />
+                    ))
+                ) : (
+                    <p>no apartments</p>
+                )}
             </div>
         </div>
     ) : null

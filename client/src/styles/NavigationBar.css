@@ -7,20 +7,22 @@
     padding: 10px;
     height: 40px;
     width: inherit;
-    background-color: rgb(26, 17, 86);
+    background-color: var(--wp-preset--color--main-blue);
 }
 
 .filter-group {
+    transform: translateY(-1px);
     width: 100%;
-
+    background-repeat: repeat-x;
+    background-image: url("../resources/top.svg");
 }
 
 .filler-bar {
     position: absolute;
-    width: 100%;
-    height: 200px;
-    background-color: darkslateblue;
+    
 }
+
+
 
 .search-bar {
     color: var(--wp-preset--color--secondary-gray);
