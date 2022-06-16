@@ -5,7 +5,11 @@ const HomePage = () => {
         <div className="home-page-content">
             <NavigationBar />
             <div className="background-container">
-                <span>FIND YOU FOREVER HOME</span>
+                <div className="text-box">
+                <div className="main-text">FIND YOU FOREVER HOME</div>
+                <span>AND START A NEW CHAPTER</span>
+                </div>
+
             </div>
         </div>
     )

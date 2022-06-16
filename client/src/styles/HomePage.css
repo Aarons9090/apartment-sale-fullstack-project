@@ -11,10 +11,19 @@
     background-image: url("../resources/home_background.svg");
 }
 
-.background-container span {
-    width: 100px;
-    color: white;
+.main-text {
+    word-spacing: 100px; 
+    font-size: 4rem;
     font-family: "Lato";
+    width: 100px;
+}
+
+.background-container span {
+    font-family: "Source Sans Pro";
     font-size: xx-large;
-    word-wrap: break-word;
+}
+
+.text-box {
+    margin: 10%;
+    color: white;
 }

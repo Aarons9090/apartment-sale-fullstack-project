@@ -7,21 +7,19 @@
 .nav-bar {
     color: white;
     position: absolute;
- 
-    padding: 10px;
     height: 40px;
     width: 100%;
     display: flex;
     justify-content: end;
-
 }
 
 .links {
+    margin: 1rem;
     color: white;
 }
 
 .nav-bar a {
-    padding: 20px;
+    padding: 0.7rem;
     color: white;
     text-decoration: none;
 }
