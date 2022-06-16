@@ -4,7 +4,7 @@ import "../../../../styles/ApartmentCard.css"
 const ApartmentCard = ({ apartment }) => {
 
     return (
-        <Link to={`/${apartment.id}`} style={{textDecoration: "none"}}>
+        <Link to={`${apartment.id}`} style={{textDecoration: "none"}}>
             <div className="card">
                 <div className="image-container">
                     <img src={apartment.image} alt="house" />

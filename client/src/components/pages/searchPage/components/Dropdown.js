@@ -20,6 +20,7 @@ const Dropdown = ({ content, title, setFilter }) => {
 
     useEffect(() => {
         createUrl()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [sorting])
 
     useEffect(() => {

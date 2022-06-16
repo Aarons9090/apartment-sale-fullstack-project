@@ -6,6 +6,7 @@ import {
     setTypeFilter,
     setRoomsFilter,
     setCityFilter,
+    setFilter,
 } from "../../../../reducers/searchFilterReducer"
 import "../../../../styles/NavigationBar.css"
 import FilterDropdown from "./FilterDropdown"
@@ -23,14 +24,19 @@ const NavigationBar = () => {
     const [types, setTypes] = useState([])
     const [url, createUrl] = useUrl()
 
+    const [selectedCity, setSelectedCity] = useState("")
+    const [selectedType, setSelectedType]  = useState("")
+    const [selectedRooms, setSelectedRooms] = useState("")
+
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    
+
     const maxValues = useSelector(state => state.apartmentValues)
 
     useEffect(() => {
-        console.log("hook")
+        console.log("navigating to: ", url)
         navigate(url)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [url])
 
     useEffect(() => {
@@ -51,7 +57,6 @@ const NavigationBar = () => {
         event.preventDefault()
         console.log("navig")
         createUrl()
-        
     }
 
     const wideButtonStyle = {
@@ -65,10 +70,21 @@ const NavigationBar = () => {
         minWidth: "150px",
     }
 
+    const reloadPage = (event) => {
+        console.log("reloading")
+        event.preventDefault()
+        dispatch(setFilter(null))
+        setSelectedCity("")
+        setSelectedRooms("")
+        setSelectedType("")
+        navigate("/")
+    }
+
     return minPrice ? (
         <div className="top">
-            <div className="nav-bar"></div>
-
+            <div className="nav-bar">
+                <button onClick={reloadPage}>Search for apartments</button>
+            </div>
             <div className="filter-group">
                 <div className="filler-bar"></div>
                 <div className="search-bar">
@@ -83,6 +99,8 @@ const NavigationBar = () => {
                             setFilter={value => {
                                 dispatch(setCityFilter(value))
                             }}
+                            selected={selectedCity}
+                            setSelected={setSelectedCity}
                         />
 
                         <FilterDropdown
@@ -92,6 +110,8 @@ const NavigationBar = () => {
                             setFilter={value => {
                                 dispatch(setTypeFilter(value))
                             }}
+                            selected={selectedType}
+                            setSelected={setSelectedType}
                         />
 
                         <FilterDropdown
@@ -101,6 +121,8 @@ const NavigationBar = () => {
                             setFilter={value => {
                                 dispatch(setRoomsFilter(value))
                             }}
+                            selected={selectedRooms}
+                            setSelected={setSelectedRooms}
                         />
                     </div>
 

@@ -12,7 +12,7 @@ const apartmentSchema = mongoose.Schema({
     oneLiner: String,
     buildYear: Number,
     rooms: Number,
-    addTime: Date
+    addTime: String
 })
 
 apartmentSchema.set("toJSON", {

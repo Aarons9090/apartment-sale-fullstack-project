@@ -40,12 +40,21 @@ const ApartmentGrid = () => {
 
     const getSearchedApartments = () => {
         const filtered = getFilteredApartments()
-
+        if(filtered !== []) {
+            filtered.forEach(element => {
+                console.log(Date(element.addTime))
+            })
+        }
+        
         switch(sort) {
             case sortingMethods.PRICE_INCREASING.title:
                 return filtered.sort((a, b) => a.price - b.price)
             case sortingMethods.PRICE_DECREASING.title:
                 return filtered.sort((a,b) => b.price - a.price)
+            case sortingMethods.DATE_ADDED_NEWEST.title:
+                return filtered.sort((a,b) => console.log(Date().parse(b.addTime)))
+            case sortingMethods.DATE_ADDED_OLDEST.title:
+                return filtered.sort((a,b) => Date(a.addTime) > Date(b.addTime))
             default: return filtered
         }
     }

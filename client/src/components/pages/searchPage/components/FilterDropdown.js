@@ -1,8 +1,7 @@
 import "../../../../styles/FilterDropdown.css"
 import { useState } from "react"
 
-const FilterDropdown = ({ content, title, setFilter, style }) => {
-    const [selected, setSelected] = useState("")
+const FilterDropdown = ({ content, title, setFilter, style, selected, setSelected }) => {
     const [expanded, setExpanded] = useState(false)
     const close = () => setExpanded(false)
 

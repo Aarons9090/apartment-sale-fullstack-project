@@ -18,6 +18,7 @@ function App() {
         <Routes>
             <Route path="/" element={<SearchPage />} />
             <Route path="/search" element={<SearchPage />} />
+            <Route path="/search/:id" element={<div></div>} />
         </Routes>
     )
 }
