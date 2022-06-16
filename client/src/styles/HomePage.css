@@ -1,0 +1,20 @@
+
+.home-page-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.background-container {
+    width: inherit;
+    height: 897px;
+    background-repeat: repeat-x;
+    background-image: url("../resources/home_background.svg");
+}
+
+.background-container span {
+    width: 100px;
+    color: white;
+    font-family: "Lato";
+    font-size: xx-large;
+    word-wrap: break-word;
+}

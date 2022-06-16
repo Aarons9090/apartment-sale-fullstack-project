@@ -1,20 +1,22 @@
 .top {
+    position: relative;
     display: flex;
     flex-direction: column;
 }
 
 .nav-bar {
+    color: white;
+    position: absolute;
+ 
     padding: 10px;
     height: 40px;
-    width: inherit;
-    background-color: var(--wp-preset--color--main-blue);
+    width: 100%;
     display: flex;
     justify-content: end;
 
 }
 
 .links {
-
     color: white;
 }
 
@@ -25,7 +27,7 @@
 }
 
 .filter-group {
-    transform: translateY(-1px);
+    
     width: 100%;
     background-repeat: repeat-x;
     background-image: url("../resources/top.svg");
