@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="979.983" viewBox="0 0 1920 979.983">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.186" cy="0.208" r="1.085" gradientTransform="matrix(0.435, 0.9, -0.419, 0.203, 0.193, -0.002)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#5487ff"/>
+      <stop offset="1" stop-color="#3672ff"/>
+    </radialGradient>
+    <filter id="Path_7" x="0" y="0" width="1920" height="979.983" filterUnits="userSpaceOnUse">
+      <feOffset dx="5" dy="-5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feFlood flood-opacity="0.129" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g data-type="innerShadowGroup">
+    <path id="Path_7-2" data-name="Path 7" d="M0,0H1920V945.193S970.516,734.717,552.664,925.7,0,742.318,0,742.318Z" fill="url(#radial-gradient)"/>
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Path_7)">
+      <path id="Path_7-3" data-name="Path 7" d="M0,0H1920V945.193S970.516,734.717,552.664,925.7,0,742.318,0,742.318Z" fill="#fff"/>
+    </g>
+  </g>
+</svg>

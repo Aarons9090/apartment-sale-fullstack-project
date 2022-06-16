@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux"
 import { initializeApartments } from "./reducers/apartmentReducer"
 import { Routes, Route } from "react-router-dom"
 import SearchPage from "./components/pages/searchPage/SearchPage"
+import HomePage from "./components/pages/homePage/HomePage"
 import { initializeApartmentValues } from "./reducers/apartmentValuesReducer"
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
     return (
         
         <Routes>
-            <Route path="/" element={<SearchPage />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/search" element={<SearchPage />} />
             <Route path="/search/:id" element={<div>apartment page</div>} />
         </Routes>

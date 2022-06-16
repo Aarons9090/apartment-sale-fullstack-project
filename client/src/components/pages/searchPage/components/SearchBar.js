@@ -13,8 +13,9 @@ import FilterDropdown from "./FilterDropdown"
 import RangeSlider from "./RangeSlider"
 import useUrl from "../hooks/useUrl"
 import { Link, useNavigate } from "react-router-dom"
+import NavigationBar from "../../../NavigationBar"
 
-const NavigationBar = () => {
+const SearchBar = () => {
     const [cities, setCities] = useState([])
     const [maxSize, setMaxSize] = useState("")
     const [minSize, setMinSize] = useState("")
@@ -25,7 +26,7 @@ const NavigationBar = () => {
     const [url, createUrl] = useUrl()
 
     const [selectedCity, setSelectedCity] = useState("")
-    const [selectedType, setSelectedType]  = useState("")
+    const [selectedType, setSelectedType] = useState("")
     const [selectedRooms, setSelectedRooms] = useState("")
 
     const dispatch = useDispatch()
@@ -35,7 +36,7 @@ const NavigationBar = () => {
 
     useEffect(() => {
         console.log("navigating to: ", url)
-        if(url){
+        if (url) {
             navigate(url)
         }
         
@@ -67,13 +68,14 @@ const NavigationBar = () => {
         maxWidth: "260px",
         minWidth: "200px",
     }
+
     const narrowButtonStyle = {
         width: "70%",
         maxWidth: "200px",
         minWidth: "150px",
     }
 
-    const reloadPage = (event) => {
+    const reloadPage = event => {
         console.log("reloading")
         event.preventDefault()
         dispatch(setFilter(null))
@@ -85,16 +87,7 @@ const NavigationBar = () => {
 
     return minPrice ? (
         <div className="top">
-            <div className="nav-bar">
-                <button onClick={reloadPage}>Search for apartments</button>
-                <div className="links">
-                    <Link to="/">Home</Link>
-                    |
-                    <Link to="/search">Apartments</Link>
-                    |
-                    <Link to="/">Sell apartment</Link>
-                </div>
-            </div>
+            <NavigationBar />
             <div className="filter-group">
                 <div className="filler-bar"></div>
                 <div className="search-bar">
@@ -181,4 +174,4 @@ const NavigationBar = () => {
     ) : null
 }
 
-export default NavigationBar
+export default SearchBar

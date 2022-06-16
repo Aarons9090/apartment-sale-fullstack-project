@@ -9,7 +9,7 @@
     width: inherit;
     background-color: var(--wp-preset--color--main-blue);
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
 
 }
 

@@ -1,10 +1,10 @@
-import NavigationBar from "./components/NavigationBar"
+import SearchBar from "./components/SearchBar"
 import ApartmentGrid from "./components/ApartmentGrid"
 
 const SearchPage = () => {
     return(
         <div className="page-content">
-            <NavigationBar />
+            <SearchBar />
             <ApartmentGrid />
         </div>
     )
