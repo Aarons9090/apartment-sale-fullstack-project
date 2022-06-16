@@ -12,7 +12,7 @@ import "../../../../styles/NavigationBar.css"
 import FilterDropdown from "./FilterDropdown"
 import RangeSlider from "./RangeSlider"
 import useUrl from "../hooks/useUrl"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const NavigationBar = () => {
     const [cities, setCities] = useState([])
@@ -87,6 +87,13 @@ const NavigationBar = () => {
         <div className="top">
             <div className="nav-bar">
                 <button onClick={reloadPage}>Search for apartments</button>
+                <div className="links">
+                    <Link to="/">Home</Link>
+                    |
+                    <Link to="/search">Apartments</Link>
+                    |
+                    <Link to="/">Sell apartment</Link>
+                </div>
             </div>
             <div className="filter-group">
                 <div className="filler-bar"></div>
