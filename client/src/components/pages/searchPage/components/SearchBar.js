@@ -8,11 +8,11 @@ import {
     setCityFilter,
     setFilter,
 } from "../../../../reducers/searchFilterReducer"
-import "../../../../styles/NavigationBar.css"
+import "../../../../styles/SearchBar.css"
 import FilterDropdown from "./FilterDropdown"
 import RangeSlider from "./RangeSlider"
 import useUrl from "../hooks/useUrl"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import NavigationBar from "../../../NavigationBar"
 
 const SearchBar = () => {

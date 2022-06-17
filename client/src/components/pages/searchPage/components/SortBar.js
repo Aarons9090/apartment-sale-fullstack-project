@@ -1,5 +1,5 @@
 import { setSortFilter } from "../../../../reducers/searchFilterReducer"
-import "../../../../styles/NavigationBar.css"
+import "../../../../styles/SearchBar.css"
 import SortDropdown from "./Dropdown"
 import { sortingMethods } from "../../../../helpers/constants"
 

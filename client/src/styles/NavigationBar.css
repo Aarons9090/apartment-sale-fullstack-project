@@ -1,9 +1,3 @@
-.top {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
 .nav-bar {
     font-family: "Source Sans Pro";
     color: white;
@@ -11,7 +5,7 @@
     height: 40px;
     width: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
 }
 
 .links {
@@ -25,56 +19,15 @@
     text-decoration: none;
 }
 
-.filter-group {
-    
-    width: 100%;
-    background-repeat: repeat-x;
-    background-image: url("../resources/top.svg");
+.logo-container {
+    margin: 15px;
+    width: 200px;
 }
 
-.filler-bar {
-    position: absolute;
+@media screen and (max-width: 1000px) {
+    .logo-container {
+        
+        width: 100px;
+    }
 
-}
-
-.search-bar {
-    color: var(--wp-preset--color--secondary-gray);
-    padding: 20px;
-    max-width: 1200px;
-    width: 70%;
-    background-color: white;
-    box-shadow: var(--wp--preset--shadow);
-    z-index: 10;
-    margin: 3rem auto;
-    position: relative;
-}
-
-.filter-dropdown-row,
-.slider-row {
-    justify-content: space-evenly;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.slider-row {
-    margin-bottom: 10px;
-
-}
-
-.search-bar-title {
-    font-size: x-large;
-    margin: 10px;
-}
-
-.search-submit-button {
-    cursor: pointer;
-    background-color: var(--wp-preset--color--highlight-orange);
-    color: white;
-    font-size: x-large;
-    border: none;
-    height: 50px;
-    margin: auto 15px 10px 10px;
-    width: 70%;
-    max-width: 200px;
-    min-width: 150px;
 }
