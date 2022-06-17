@@ -24,10 +24,55 @@
     width: 200px;
 }
 
+.popup-menu {
+    display: none;
+}
+
+.popup-menu button {
+    transition: ease-in-out 0.2s;
+    top: 20px;
+    right: 20px;
+    position: fixed;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 5rem;
+    cursor: pointer;
+    line-height: 4rem;
+}
+
+.sidebar {
+    height: 100%;
+    transition: ease-in-out 0.2s;
+    top: 0px;
+    right: 0px;
+    position: fixed;
+    padding: 15px;
+    z-index: 11;
+    top: 0px;
+    background-color: var(--wp-preset--color--main-blue);
+    border: 1px solid;
+}
+
+.sidebar-links {
+    align-items: center;
+    justify-content: start;
+    display: grid;
+}
+
+
 @media screen and (max-width: 1000px) {
     .logo-container {
-        
         width: 100px;
     }
+}
 
+@media screen and (max-width: 500px) {
+    .links {
+        display: none;
+    }
+
+    .popup-menu {
+        display: block;
+    }
 }
