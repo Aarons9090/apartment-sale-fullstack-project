@@ -24,6 +24,12 @@
     width: 200px;
 }
 
+.logo {
+
+    height: auto;
+    max-width: 100%;
+}
+
 .popup-menu {
     display: none;
 }

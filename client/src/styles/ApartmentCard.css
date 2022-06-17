@@ -1,6 +1,6 @@
 
 .card {
-    min-width: 350px;
+    min-width: 330px;
     max-width: 400px;
     flex: 1 0 33%;
     background-color: white;

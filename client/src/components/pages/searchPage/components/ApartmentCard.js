@@ -4,8 +4,9 @@ import "../../../../styles/ApartmentCard.css"
 const ApartmentCard = ({ apartment }) => {
 
     return (
-        <Link to={`${apartment.id}`} style={{textDecoration: "none"}}>
+        
             <div className="card">
+                <Link to={`${apartment.id}`} style={{textDecoration: "none"}}>
                 <div className="image-container">
                     <img src={apartment.image} alt="house" />
                 </div>
@@ -22,8 +23,9 @@ const ApartmentCard = ({ apartment }) => {
                         <p>{apartment.oneLiner}</p>
                     </div>
                 </div>
+                </Link>
             </div>
-        </Link>
+       
     )
 }
 
