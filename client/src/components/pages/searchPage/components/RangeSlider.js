@@ -53,6 +53,7 @@ const RangeSlider = ({ title, max, min, roundBy, setFilter, symbol }) => {
             <p>{title}</p>
             <Slider
                 sx={style}
+                
                 min={roundedMin}
                 max={roundedMax}
                 disableSwap

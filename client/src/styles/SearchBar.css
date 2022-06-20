@@ -31,7 +31,7 @@
 
 .filter-dropdown-row,
 .slider-row {
-    justify-content: space-evenly;
+    justify-content: space-between;
     display: flex;
     flex-wrap: wrap;
 }

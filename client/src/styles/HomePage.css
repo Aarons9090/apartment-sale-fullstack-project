@@ -6,24 +6,25 @@
 
 .background-container {
     width: inherit;
-    height: 897px;
+    height: 570px;
     background-repeat: repeat-x;
+    background-position-y: bottom;
     background-image: url("../resources/home_background.svg");
 }
 
 .main-text {
     word-spacing: 100px;
-    font-size: 4rem;
+    font-size: 3rem;
     font-family: "Lato";
     width: 100px;
 }
 
 .background-container span {
-    font-size: xx-large;
+    font-size: 1.5rem;
 }
 
 .text-box {
-    margin: 10% 10% 5% 10%;
+    margin: 8% 10% 3% 10%;
     color: white;
 }
 
@@ -37,30 +38,30 @@
     display: flex;
     justify-content: space-evenly;
     font-size: xx-large;
+    margin: 0 10%;
 
 }
 
 
 .middle-text {
-    min-width: 200px;
+    min-width: 180px;
     text-align: center;
 }
 
 .primary-btn,
 .secondary-btn {
     display: flex;
-    flex-grow: 1;
-    min-width: 350px;
+
+    min-width: 320px;
     max-width: 400px;
     justify-content: center;
     cursor: pointer;
     font-family: inherit;
     font-weight: 300;
-    font-size: inherit;
+    font-size: 1.5rem;
     border: none;
     border-radius: 39px;
-    padding: 10px 40px 10px 40px;
-    margin: 10px 25px 0 25px;
+    padding: 10px 30px 10px 30px;
 }
 
 .primary-btn {
@@ -75,13 +76,15 @@
 }
 
 @media screen and (max-width: 1000px) {
+    
     .button-row {
+        margin-top: 50px;
         display: grid;
     }
 
     .primary-btn,
     .secondary-btn {
-        margin: 30px;
+        margin: 10px;
         min-width: 250px;
         display: block;
         
@@ -90,13 +93,15 @@
 }
 
 @media screen and (max-width: 500px) {
-
+    .text-box {
+        margin-top: 50px;
+    }
     .primary-btn,
     .secondary-btn {
         font-size: large;   
     }
 
     .background-container {
-        background-position-y: -100px
+       height: 630px;
     }
 }
