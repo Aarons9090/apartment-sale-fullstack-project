@@ -14,9 +14,9 @@
 
 .main-text {
     word-spacing: 100px;
-    font-size: 3rem;
+    font-size: 3.2rem;
     font-family: "Lato";
-    width: 100px;
+    font-weight: 800;
 }
 
 .background-container span {
@@ -24,15 +24,24 @@
 }
 
 .text-box {
-    margin: 8% 10% 3% 10%;
+    width: 300px;
+    margin: 100px 200px 50px 100px;
     color: white;
+}
+
+.pool-image-container {
+    right: 200px;
+    top: 100px;
+    max-width: 250px;
+    height: auto;
+    position: absolute;
 }
 
 
 .button-row {
     display: flex;
     flex-wrap: wrap;
-    max-width: 1700px;
+    max-width: 1000px;
     align-items: center;
     color: white;
     display: flex;
@@ -75,8 +84,69 @@
     border: 4px solid var(--wp-preset--color--highlight-orange)
 }
 
-@media screen and (max-width: 1000px) {
+.second-page-background {
+    z-index: -2;
+    margin-top: 200px;
+    background-image: url("../resources/home_background_2.svg");
+    height: 650px;
+    width: 100%;
+}
+
+.side-slice {
+    background-image: url("../resources/side_slice.svg");
+    width: 40vw;
+    height: inherit;
+    position: absolute;
+    right: 0;
+    background-size: cover;
+    text-align: right;
+}
+
+.side-slice-text {
+    position: absolute;
+    right: 40px;
+    top: 180px;
+    width: 200px;
+    color: white;
+    font-size: 3.2rem;
+    font-weight: 600;
+}
+
+.side-slice button {
+    position: absolute;
+    top: 500px;
+    right: 40px;
+}
+
+.carousel-container {
+    background-color: gray;
+    position: absolute;
+    margin: 80px 80px;
+    height: 400px;
+    width: 50%
+}
+
+.carousel-container span {
+    font-size: large;
+    line-height: 1.7rem;
+    background-color: blue;
+    color: white;
+    width: 100%;
+    height: 30px;
+    bottom: 0px;
+    position: absolute;
+}
+
+.balls {
+    position: absolute;
+    padding-left: 50vw;
+    padding-top: 50px;
+    z-index: -1;
     
+}
+
+@media screen and (max-width: 1000px) {
+
     .button-row {
         margin-top: 50px;
         display: grid;
@@ -87,8 +157,21 @@
         margin: 10px;
         min-width: 250px;
         display: block;
-        
-        
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .side-slice,
+    .balls {
+        display: none;
+    }
+
+    .carousel-container {
+        width: 80%;
+    }
+
+    .pool-image-container {
+        display: none;
     }
 }
 
@@ -96,12 +179,15 @@
     .text-box {
         margin-top: 50px;
     }
+
     .primary-btn,
     .secondary-btn {
-        font-size: large;   
+        font-size: large;
     }
 
     .background-container {
-       height: 630px;
+        height: 630px;
     }
+
+
 }

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="818.32" viewBox="0 0 1920 818.32">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.432" cy="0.433" r="0.434" gradientTransform="matrix(0.402, 0.915, -0.332, 0.146, 0.245, -0.054)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#5586f9"/>
+      <stop offset="1" stop-color="#3672ff"/>
+    </radialGradient>
+  </defs>
+  <path id="tausta" d="M0,0H1920V818.32H0Z" fill="url(#radial-gradient)"/>
+</svg>
