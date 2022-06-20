@@ -3,6 +3,7 @@ import "../../../styles/HomePage.css"
 import { useNavigate } from "react-router-dom"
 import pool_image from "../../../resources/pool.png"
 import balls from "../../../resources/balls.svg"
+import Carousel from "./components/Carousel"
 
 const HomePage = () => {
     const navigate = useNavigate()
@@ -36,14 +37,12 @@ const HomePage = () => {
             </div>
 
             <div className="second-page-background">
-                <div className="carousel-container">
-                    <span>Muuramentie 21 | 145m2 | 270 000€</span>
-                </div>
+                <Carousel />
                 <div className="balls">
                     <img src={balls} alt="balls" />
                 </div>
                 <div className="side-slice">
-                    <div className="side-slice-text">Browse hundreds of new listings</div>
+                    <div className="side-slice-text">Browse hundreds of <span>new</span> listings</div>
                     <button
                         onClick={() => {
                             navigate("/search")
