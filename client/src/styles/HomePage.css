@@ -102,12 +102,11 @@
 
 .side-slice-text {
     position: absolute;
-    right: 40px;
+    right: 15%;
     top: 80px;
-    width: 200px;
+    width: 300px;
     color: white;
-    font-size: 3.5rem;
-    font-weight: 200;
+    font-size: 5rem;
 }
 .side-slice-text span {
     color: var(--wp-preset--color--highlight-orange);
@@ -116,17 +115,34 @@
 
 .side-slice button {
     position: absolute;
-    top: 400px;
-    right: 40px;
+    top: 500px;
+    right: 15%;
+    min-width: 300px;
+    margin: 0;
 }
 
 
 .balls {
     position: absolute;
-    padding-left: 50vw;
+    padding-left: 55vw;
     padding-top: 50px;
     z-index: -0;
 
+}
+
+@media screen and (max-width: 1300px) {
+    .side-slice-text {
+        font-size: 3.5rem;
+        width: 250px;
+        right: 12%
+    }
+
+    .side-slice button {
+        top: 400px;
+        min-width: 200px;
+        right: 12%
+    }
+    
 }
 
 @media screen and (max-width: 1042px) {
@@ -146,9 +162,19 @@
         min-width: 250px;
         display: block;
     }
+
+    .side-slice-text,
+    .side-slice button {
+        right: 5%;
+    }
+
+    .side-slice-text {
+        font-size: 3rem;
+        width: 200px;
+    }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 840px) {
     .side-slice,
     .balls {
         display: none;

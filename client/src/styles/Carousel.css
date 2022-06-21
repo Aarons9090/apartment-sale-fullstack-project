@@ -1,9 +1,9 @@
 .carousel-container {
     background-color: gray;
     position: absolute;
-    margin: 80px 80px;
-    height: 400px;
-    width: 40%;
+    margin: 80px 100px;
+    height: 500px;
+    width: 45%;
     overflow: hidden;
     z-index: 2;
     display: flex;
@@ -26,17 +26,16 @@
 }
 
 .image-container {
+    object-fit: cover;
     transition: ease-in-out 0.2s;
     width: 100%;
-    height: inherit;
+    height: auto;
     display: flex;
     transform: translateX(0);
 }
 
 .carousel-container img {
-    object-fit: cover;
-    width: inherit;
-    height: inherit;
+    min-width: 100%;
 }
 
 .carousel-indicators {
