@@ -94,7 +94,7 @@
     color: var(--wp-preset--color--secondary-blue);
     font-family: "Lato", sans-serif;
     font-size: 3.5rem;
-    margin: 20px 50px;
+    margin: 30px 50px 10px 50px;
 }
 
 .big-card-row {
@@ -140,29 +140,31 @@
 
 .second-page-background {
     z-index: -3;
-    margin-top: 200px;
-    background-image: url("../resources/home_background_2.svg");
-    height: 650px;
+    margin-top: 100px;
+    background-image: url("../resources/home_background_3.svg");
+    height: 1100px;
     width: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .side-slice {
-    background-image: url("../resources/side_slice.svg");
-    width: 40vw;
-    height: inherit;
+   
+    background-color: var(--wp-preset--color--secondary-blue);
+    max-width: 400px;
+    max-height: 500px;
+    height: 500px;
     position: absolute;
-    right: 0;
-    background-size: cover;
+    right: 100px;
+    margin-top: 200px;
     text-align: right;
+    padding: 50px;
 }
 
 .side-slice-text {
-    position: absolute;
-    right: 15%;
-    top: 80px;
-    width: 300px;
     color: white;
-    font-size: 5rem;
+    font-size: 4.2rem;
 }
 
 .side-slice-text span {
@@ -172,10 +174,9 @@
 
 .side-slice button {
     position: absolute;
-    top: 500px;
-    right: 15%;
+    right: 20px;
     min-width: 300px;
-    margin: 0;
+    margin: 20px ;
 }
 
 
