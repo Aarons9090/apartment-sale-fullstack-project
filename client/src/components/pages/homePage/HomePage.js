@@ -8,6 +8,8 @@ import cabin from "../../../resources/cabin.svg"
 import city from "../../../resources/city.svg"
 import Carousel from "./components/Carousel"
 import BigCard from "./components/BigCard"
+import SmallCard from "./components/SmallCard"
+import {LocalParking, DeviceThermostat, Elevator, LocationCity, Forest, BeachAccess} from "@mui/icons-material";
 
 const HomePage = () => {
     const navigate = useNavigate()
@@ -52,6 +54,15 @@ const HomePage = () => {
                         image={city}
                     />
                     <BigCard text="A fresh start in a new city" image={town} />
+                </div>
+                <h2 style={{textAlign: "right"}}>Pick what's most important to you</h2>
+                <div className="small-card-row-container">
+                    <SmallCard icon={LocalParking} text="Parking" />
+                    <SmallCard icon={DeviceThermostat} text="Sauna" />
+                    <SmallCard icon={Elevator} text="Elevator" />
+                    <SmallCard icon={Forest} text="Nature" />
+                    <SmallCard icon={LocationCity} text="City centre" />
+                    <SmallCard icon={BeachAccess} text="Beach" />
                 </div>
             </div>
             <div className="second-page-background">

@@ -1,0 +1,33 @@
+
+.small-card-container {
+    width: 170px;
+    min-width: 170px;
+    height: 140px;
+    max-height: 140px;
+    background-color: white;
+    border-radius: 37px;
+    color:  var(--wp-preset--color--secondary-blue);
+    padding: 15px;
+    display: grid;
+    margin: 0 10px;
+}
+
+.icon {
+    font-size: 5rem;
+    margin-bottom: 5px;
+}
+
+.small-card-container span, p {
+    margin-left: 15px;
+}
+
+.small-card-container span {
+    font-size: 2rem;
+    line-height: 1rem;
+
+}
+.small-card-container p {
+    font-size: 1.3rem;
+    line-height: 0.7rem;
+    font-weight: 300;
+}

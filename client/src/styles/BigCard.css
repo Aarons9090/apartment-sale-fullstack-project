@@ -1,7 +1,6 @@
 .big-card {
     box-shadow: var( --wp-preset--heavy-shadow);
     width: 430px;
-    
     border-radius: 37px;
     margin: 20px;
     padding: 35px;
@@ -22,4 +21,10 @@
 .big-card span {
     font-size: 1.8rem;
     color: var(--wp-preset--color--secondary-blue);
+}
+
+@media screen and (max-width: 1042px) {
+    .big-card span {
+        font-size: 1.2rem;
+    }
 }
