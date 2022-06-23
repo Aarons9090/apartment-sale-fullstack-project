@@ -1,0 +1,25 @@
+.big-card {
+    box-shadow: var( --wp-preset--heavy-shadow);
+    width: 430px;
+    
+    border-radius: 37px;
+    margin: 20px;
+    padding: 35px;
+}
+
+.big-card-image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 80%;
+    margin-bottom: 10px;
+}
+
+.big-card-image-container img {
+    position: absolute;
+    bottom: 0;
+}
+
+.big-card span {
+    font-size: 1.8rem;
+    color: var(--wp-preset--color--secondary-blue);
+}

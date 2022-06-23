@@ -5,7 +5,7 @@
     flex: 1 0 33%;
     background-color: white;
     margin: 20px 30px;
-    box-shadow: var(--wp--preset--shadow)
+    box-shadow: var(--wp-preset--shadow)
 }
 
 .image-container {

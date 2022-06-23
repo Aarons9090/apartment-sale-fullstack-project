@@ -3,7 +3,8 @@ body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --wp--preset--shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --wp-preset--shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --wp-preset--heavy-shadow: rgba(0, 0, 0, 0.26) 0px 3px 8px 0px;
   --wp-preset--color--secondary-gray: rgb(112, 112, 112);
   --wp-preset--color--highlight-orange: rgb(229, 175, 82);
   --wp-preset--color--main-blue: rgb(54, 114, 255);

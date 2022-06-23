@@ -3,7 +3,11 @@ import "../../../styles/HomePage.css"
 import { useNavigate } from "react-router-dom"
 import pool_image from "../../../resources/pool.png"
 import balls from "../../../resources/balls.svg"
+import town from "../../../resources/town.svg"
+import cabin from "../../../resources/cabin.svg"
+import city from "../../../resources/city.svg"
 import Carousel from "./components/Carousel"
+import BigCard from "./components/BigCard"
 
 const HomePage = () => {
     const navigate = useNavigate()
@@ -35,14 +39,30 @@ const HomePage = () => {
                     <button className="secondary-btn">Sell my apartment</button>
                 </div>
             </div>
-
+            <div className="middle-page">
+                <h2>What suits you the best?</h2>
+                <div className="big-card-row">
+                    <BigCard
+                        text="Quiet place on the hills to enjoy sunrises and nature"
+                        image={cabin}
+                    />
+                    <BigCard
+                        text="A resting place in the middle 
+                            of your favorite activities"
+                        image={city}
+                    />
+                    <BigCard text="A fresh start in a new city" image={town} />
+                </div>
+            </div>
             <div className="second-page-background">
                 <Carousel />
                 <div className="balls">
                     <img src={balls} alt="balls" />
                 </div>
                 <div className="side-slice">
-                    <div className="side-slice-text">Browse hundreds of <span>new</span> listings</div>
+                    <div className="side-slice-text">
+                        Browse hundreds of <span>new</span> listings
+                    </div>
                     <button
                         onClick={() => {
                             navigate("/search")
