@@ -1,8 +1,8 @@
 
 .small-card-container {
-    width: 170px;
-    min-width: 170px;
-    height: 140px;
+
+    min-width: 150px;
+    height: 130px;
     max-height: 140px;
     background-color: white;
     border-radius: 37px;
@@ -10,11 +10,13 @@
     padding: 15px;
     display: grid;
     margin: 0 10px;
+    box-shadow: var(--wp-preset--heavy-shadow);
 }
 
 .icon {
-    font-size: 5rem;
+    font-size: 3.5rem;
     margin-bottom: 5px;
+    margin-left: 7px;
 }
 
 .small-card-container span, p {
@@ -22,7 +24,7 @@
 }
 
 .small-card-container span {
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1rem;
 
 }
@@ -30,4 +32,28 @@
     font-size: 1.3rem;
     line-height: 0.7rem;
     font-weight: 300;
+}
+
+@media screen and (max-width: 1042px) {
+    .small-card-container {
+        max-height: 100px;
+        min-width: 130px;
+    }
+
+    .icon {
+        font-size: 3rem;
+        margin-bottom: 0;
+    }
+
+    .small-card-container span {
+        font-size: 1.2rem;
+        line-height: 0.6rem;
+    
+    }
+    .small-card-container p {
+        font-size: 1.0rem;
+        line-height: 0.5rem;
+        font-weight: 300;
+        margin: 0 0 0 15px;
+    }
 }

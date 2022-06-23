@@ -23,7 +23,7 @@
 
 .text-box {
     width: 300px;
-    padding: 100px 50px 20px 50px;
+    padding: 100px 50px 20px 15%;
     color: white;
 }
 
@@ -34,7 +34,10 @@
     height: auto;
     position: absolute;
 }
-
+.button-row-parent {
+    display: flex;
+    justify-content: center;
+}
 
 .button-row {
     display: flex;
@@ -83,6 +86,10 @@
     border: 4px solid var(--wp-preset--color--highlight-orange)
 }
 
+.middle-page {
+    margin-top: 50px;
+}
+
 .middle-page h2 {
     color: var(--wp-preset--color--secondary-blue);
     font-family: "Lato", sans-serif;
@@ -91,19 +98,25 @@
 }
 
 .big-card-row {
-    margin: 30px;
+    margin: 0 30px;
     display: flex;
     justify-content: space-evenly;
 }
 
+.small-card-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .small-card-row-container {
     background-color: var(--wp-preset--color--main-blue);
-    margin: 50px;
+    margin: 20px 50px;
     display: flex;
     height: 200px;
+    max-width: 1315px;
     border-radius: 37px;
     box-shadow: inset -2px 3px 8px 0px rgba(0, 0, 0, 0.28);
-    display: flex;
     padding: 0 20px;
     align-items: center;
     overflow-x: scroll;
@@ -111,18 +124,11 @@
 
 .small-card-row-container::-webkit-scrollbar {
     height: 7px;
-    max-width: 90%;
-}
-
-.small-card-row-container::-webkit-scrollbar-track {
-    background-color: transparent;
-    
 }
 
 .small-card-row-container::-webkit-scrollbar-thumb {
-    background-color: var(--wp-preset--color--secondary-gray);
+    background-color: var(--wp-preset--color--secondary-blue);
     border-radius: 37px;
-    height: 5px;
     padding: 0 50px;
 }
 
@@ -203,7 +209,7 @@
     }
 
     .button-row {
-        margin-top: 50px;
+        margin-top: 30px;
         display: grid;
     }
 
@@ -218,6 +224,10 @@
         font-size: 2.5rem;
     }
 
+    .small-card-row-container {
+        height: 170px;
+    }
+
     .side-slice-text,
     .side-slice button {
         right: 5%;
@@ -230,7 +240,9 @@
 }
 
 @media screen and (max-width: 840px) {
-
+    .button-row {
+        margin-top: 10px
+    }
     .side-slice,
     .balls {
         display: none;
@@ -251,6 +263,19 @@
         padding: 40px 20px;
 
     }
+    .middle-page {
+        margin-top: 30px;
+    }
+
+    .small-card-row-container {
+        margin: 0;
+        width: 90%;
+    }
+
+    .big-card-row {
+        display: grid;
+    }
+
 
     .primary-btn,
     .secondary-btn {
