@@ -1,6 +1,8 @@
 # Apartment sale website Fullstack project
 This project is still under progress
 
+All elements are made by me from scratch (except slider's base element)
+
 Stack used:
 > React, Node.js, Express, MongoDB, Redux
 ### Demo can be viewed here:
